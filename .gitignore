@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# Environment
+.env
+
+# Research files (not for production)
+fit_bkt.py
+evaluate_bkt.py
+generate_test_data.py
+learned_bkt_params.json
+evaluation_results.json
+test_*.py
+
+# Documentation (keep only README.md)
+*_GUIDE.md
+*_SUMMARY.md
+*_QUICKREF.txt
+*_ARCHITECTURE.md
+BEFORE_AFTER_COMPARISON.md
+BKT_*.md
+BKT_*.txt
+CONCURRENCY_SAFE.md
+ASYNC_*.md
+LEARNING_PIPELINE*.md
+EVALUATE_*.md
+FIT_*.md
+IMPLEMENTATION_SUMMARY.md
+VERIFICATION_CHECKLIST.md
+EXECUTIVE_SUMMARY.md
+INDEX.md
+SYSTEM_OVERVIEW.md
+TEAM_INTEGRATION_GUIDE.md
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

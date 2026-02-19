@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "description": "Basic DSA topic-level skill model",
+  "skills": [
+    { "id": "arrays", "name": "Arrays" },
+    { "id": "strings", "name": "Strings" },
+    { "id": "two_pointers", "name": "Two Pointers" },
+    { "id": "binary_search", "name": "Binary Search" },
+    { "id": "hashmaps", "name": "Hashing / HashMaps" },
+    { "id": "recursion", "name": "Recursion" },
+    { "id": "stack_queue", "name": "Stacks & Queues" },
+    { "id": "sliding_window", "name": "Sliding Window" },
+    { "id": "dynamic_programming", "name": "Dynamic Programming" },
+    { "id": "graphs", "name": "Graphs Traversal (BFS/DFS)" }
+  ]
+}
