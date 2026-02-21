@@ -1,31 +1,16 @@
-"""
-MongoDB Atlas Configuration
-Update with your actual connection string
-"""
+"""Configuration module for loading environment variables."""
+import os
+from dotenv import load_dotenv
 
-# MongoDB Atlas Connection
-MONGO_URI = "mongodb+srv://<username>:<password>@<cluster>.mongodb.net/?retryWrites=true&w=majority"
+load_dotenv()
 
-# Database name
-DATABASE_NAME = "dsagame"
-
-# Collections
-COLLECTIONS = {
-    "submissions": "submissions",
-    "error_logs": "error_logs",
-    "students": "students",  # For Member 2
-    "student_skills": "student_skills"  # For Member 2
-}
-
-# Example: How to set up MongoDB Atlas
-"""
-1. Go to https://www.mongodb.com/cloud/atlas
-2. Create free cluster
-3. Create database user
-4. Whitelist your IP (or use 0.0.0.0/0 for testing)
-5. Get connection string
-6. Replace <username>, <password>, <cluster> in MONGO_URI above
-"""
-
-# For local testing (without Atlas)
-LOCAL_MONGO_URI = "mongodb://localhost:27017/"
+class Config:
+    """Application configuration from environment variables."""
+    
+    MONGO_URI = os.getenv('MONGO_URI', 'mongodb://localhost:27017/')
+    DB_NAME = os.getenv('DB_NAME', 'adaptive_tutor')
+    INITIAL_MASTERY = float(os.getenv('INITIAL_MASTERY', '0.25'))
+    LEARN_GAIN = float(os.getenv('LEARN_GAIN', '0.08'))
+    ERROR_PENALTY = float(os.getenv('ERROR_PENALTY', '0.12'))
+    MIN_MASTERY = float(os.getenv('MIN_MASTERY', '0.05'))
+    MAX_MASTERY = float(os.getenv('MAX_MASTERY', '0.95'))
