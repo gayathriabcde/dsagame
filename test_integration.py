@@ -34,9 +34,9 @@ payload = convert_to_member2_format(
     solve_time=45.5
 )
 
-print("✓ Member 3 analysis complete")
-print("✓ Converted to Member 2 format")
+print("[OK] Member 3 analysis complete")
+print("[OK] Converted to Member 2 format")
 print("\nPayload:")
 import json
 print(json.dumps(payload, indent=2))
-print("\n✓ Ready to send to Member 2 backend at POST /learn")
+print("\n[OK] Ready to send to Member 2 backend at POST /learn")
