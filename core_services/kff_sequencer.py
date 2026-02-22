@@ -1,6 +1,6 @@
 import math
-from models.problem_model import ProblemModel
-from models.sequence_log_model import SequenceLogModel
+from core_models.problem_model import ProblemModel
+from core_models.sequence_log_model import SequenceLogModel
 
 class KFFSequencer:
     def __init__(self, gamma=0.25, alpha=1.0, beta=0.6):
@@ -25,7 +25,7 @@ class KFFSequencer:
         v = self.calculate_momentum(recent_results)
         target_challenge = max(0.0, min(1.0, bkt_mastery + (self.gamma * v)))
 
-        # 2. Let MongoDB do the heavy filtering
+        # 2. Use your optimized MongoDB query instead of get_all_problems!
         candidate_problems = ProblemModel.get_candidate_problems(
             weak_skills=weak_skills,
             current_problem_id=current_problem_id,
@@ -34,15 +34,24 @@ class KFFSequencer:
 
         best_problem = None
         lowest_energy = float('inf')
-        recent_skills = SequenceLogModel.get_recent_skills(student_id)
 
-        # 3. Run the objective function only on the highly relevant subset
+        # 3. Fetch logs for Stagnation and Redemption
+        recent_skills = SequenceLogModel.get_recent_skills(student_id, limit=2)
+        failed_skills = SequenceLogModel.get_recently_failed_skills(student_id, limit=10)
+
+        # 4. Evaluate only the highly relevant candidates
         for prob in candidate_problems:
             difficulty = prob.get('difficulty', 0.5)
-            stagnation = 1.0 if prob.get('primary_skill') in recent_skills else 0.0
+            primary_skill = prob.get('primary_skill')
 
-            # Flow Divergence Energy
-            energy = (self.alpha * (difficulty - target_challenge) ** 2) + (self.beta * stagnation)
+            # Stagnation: Penalize if seen in the last 2 turns
+            stagnation = 1.0 if primary_skill in recent_skills else 0.0
+
+            # Redemption: Bonus if they failed this topic recently (but not on the immediate last turn)
+            redemption = -0.4 if primary_skill in failed_skills and primary_skill not in recent_skills else 0.0
+
+            # Flow Divergence Energy with Redemption Arc
+            energy = (self.alpha * (difficulty - target_challenge) ** 2) + (self.beta * stagnation) + redemption
 
             if energy < lowest_energy:
                 lowest_energy = energy

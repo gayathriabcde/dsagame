@@ -1,6 +1,6 @@
 """
 API Endpoints for Member 3 - Submission Processing with MongoDB
-Flask routes for submission analysis and error retrieval
+Flask core_routes for submission analysis and error retrieval
 """
 
 from flask import Flask, request, jsonify
@@ -12,7 +12,7 @@ import config
 
 app = Flask(__name__)
 
-# Initialize services with MongoDB
+# Initialize core_services with MongoDB
 submission_service = SubmissionService(config.MONGO_URI, config.DATABASE_NAME)
 feedback_generator = ExecutionFeedback()
 member2_integration = Member2Integration(config.MONGO_URI)

@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from services.submission_orchestrator import SubmissionOrchestrator
+from core_services.submission_orchestrator import SubmissionOrchestrator
 
 submission_bp = Blueprint('submission', __name__)
 

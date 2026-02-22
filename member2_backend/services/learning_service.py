@@ -8,8 +8,8 @@ Orchestrates the learning event processing:
 """
 
 from datetime import datetime
-from services.mastery_service import MasteryService
-from models.student_model import StudentModel
+from core_services.mastery_service import MasteryService
+from core_models.student_model import StudentModel
 
 class LearningService:
     """Orchestrates learning event processing."""

@@ -1,7 +1,7 @@
 """Database connection module."""
 from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure, ServerSelectionTimeoutError
-from config import Config
+from member2_backend.config import Config
 
 class Database:
     """MongoDB database connection manager."""

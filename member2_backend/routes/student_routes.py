@@ -1,7 +1,7 @@
-"""Student API routes."""
+"""Student API core_routes."""
 from flask import Blueprint, request, jsonify
-from models.student_model import StudentModel
-from services.mastery_service import MasteryService
+from core_models.student_model import StudentModel
+from core_services.mastery_service import MasteryService
 
 student_bp = Blueprint('students', __name__, url_prefix='/students')
 

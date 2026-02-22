@@ -1,10 +1,10 @@
-from services.judge_service import JudgeService
-from services.kff_sequencer import KFFSequencer
-from services.learning_service import LearningService
+from core_services.judge_service import JudgeService
+from core_services.kff_sequencer import KFFSequencer
+from member2_backend.services.learning_service import LearningService
 from error_mining_interface import analyze_learner_submission
-from models.problem_model import ProblemModel
-from models.sequence_log_model import SequenceLogModel
-from models.student_model import StudentModel
+from core_models.problem_model import ProblemModel
+from core_models.sequence_log_model import SequenceLogModel
+from member2_backend.models.student_model import StudentModel
 
 
 class SubmissionOrchestrator:

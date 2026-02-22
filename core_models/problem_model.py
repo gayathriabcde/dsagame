@@ -1,4 +1,4 @@
-from db import Database
+from member2_backend.db import Database
 
 class ProblemModel:
     @staticmethod
