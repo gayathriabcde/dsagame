@@ -1,6 +1,6 @@
 import math
-from core_models.problem_model import ProblemModel
-from core_models.sequence_log_model import SequenceLogModel
+from models.problem_model import ProblemModel
+from models.sequence_log_model import SequenceLogModel
 
 class KFFSequencer:
     def __init__(self, gamma=0.25, alpha=1.0, beta=0.6):

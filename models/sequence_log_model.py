@@ -1,4 +1,4 @@
-from member2_backend.db import Database
+from db import Database
 from datetime import datetime
 
 

@@ -1,7 +1,7 @@
 """Test Member 2 + Member 3 Integration"""
 
 from member2_bridge import convert_to_member2_format
-from error_taxonomy import DSASubskill
+from error_taxonomy import DSASubskillw
 
 # Test case
 code = """

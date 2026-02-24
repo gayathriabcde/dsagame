@@ -1,8 +1,8 @@
 """Mastery service for handling skill updates and logging."""
 from datetime import datetime
 from db import Database
-from core_models.bkt_model import BKTModel
-from core_models.student_model import StudentModel
+from models.bkt_model import BKTModel
+from models.student_model import StudentModel
 from utils.skill_loader import SkillLoader
 
 class MasteryService:

@@ -16,8 +16,8 @@ from datetime import datetime
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
 from db import Database
-from core_services.mastery_service import MasteryService
-from core_models.student_model import StudentModel
+from services.mastery_service import MasteryService
+from models.student_model import StudentModel
 from pymongo import ReturnDocument
 
 class LearningWorker:

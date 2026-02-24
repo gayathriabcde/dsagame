@@ -1,9 +1,9 @@
 """Main Flask application for Learner State & Mastery Modeling."""
 from flask import Flask, jsonify
 from db import Database
-from core_routes.student_routes import student_bp
-from core_routes.learning_route import learning_bp
-from core_routes.submission_routes import submission_bp
+from routes.student_routes import student_bp
+from routes.learning_route import learning_bp
+from routes.submission_routes import submission_bp
 from utils.skill_loader import SkillLoader
 
 app = Flask(__name__)
