@@ -4,8 +4,8 @@ Flask routes for submission analysis and error retrieval
 """
 
 from flask import Flask, request, jsonify
-from submission_service import SubmissionService
-from execution_feedback import ExecutionFeedback, format_for_display
+from services.submission_service import SubmissionService
+from execution_feedback import ExecutionFeedback
 from error_taxonomy import DSASubskill
 from member2_integration import Member2Integration
 import config
