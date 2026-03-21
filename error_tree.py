@@ -150,18 +150,48 @@ class ErrorTree:
         
         gaps = []
         for skill, errs in skill_errors.items():
-            if len(errs) >= 2:  # Multiple errors in same skill
+            if len(errs) >= 2:
                 severity = sum(e.pattern.severity * e.confidence for e in errs) / len(errs)
                 gaps.append(ConceptualGap(
                     skill,
                     severity,
                     len(errs),
-                    self._get_focus_areas(skill)
+                    self._get_focus_areas(skill, errs)
                 ))
         
         return gaps
     
-    def _get_focus_areas(self, skill: DSASubskill) -> List[str]:
+    # Maps each error ID to the specific focus area it implies
+    ERROR_FOCUS_MAP = {
+        "E001": "loop bounds and off-by-one errors",
+        "E002": "base case design in recursion",
+        "E003": "stack push/pop order",
+        "E004": "comparison logic in sorting",
+        "E005": "array index boundary checks",
+        "E006": "null/None checks before access",
+        "E007": "reducing nested loops with better data structures",
+        "E008": "choosing BFS vs DFS correctly",
+        "E009": "handling missing keys in hash maps",
+        "E010": "two pointer movement direction",
+        "E011": "sliding window size calculation",
+        "E012": "verifying greedy choice is globally optimal",
+        "E013": "DP state transition formula",
+        "E014": "maintaining heap property after insert/delete",
+        "E015": "pruning invalid branches in backtracking",
+        "E016": "freeing memory in linked list operations",
+        "E017": "bit shift direction",
+        "E018": "binary search bounds (right = len-1, not len)",
+        "E000": "reviewing test case failures carefully",
+    }
+
+    def _get_focus_areas(self, skill: DSASubskill, errors: List[DetectedError] = None) -> List[str]:
+        # If we know which errors caused this skill to fail, use those specific focus areas
+        if errors:
+            focuses = [self.ERROR_FOCUS_MAP[e.error_id] for e in errors if e.error_id in self.ERROR_FOCUS_MAP]
+            if focuses:
+                return list(dict.fromkeys(focuses))  # deduplicate while preserving order
+
+        # Fallback: general focus areas for the skill
         focus_map = {
             DSASubskill.ARRAY_TRAVERSAL: ["loop bounds", "index arithmetic", "edge cases"],
             DSASubskill.RECURSION: ["base cases", "recursive calls", "return values"],

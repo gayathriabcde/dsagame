@@ -5,38 +5,39 @@ Flask routes for submission analysis and error retrieval
 
 from flask import Flask, request, jsonify
 from submission_service import SubmissionService
-from execution_feedback import ExecutionFeedback, format_for_display
+from execution_feedback import ExecutionFeedback
 from error_taxonomy import DSASubskill
-from member2_integration import Member2Integration
+from member2_bridge import convert_to_member2_format, send_to_member2
 import config
 
 app = Flask(__name__)
 
-# Initialize services with MongoDB
 submission_service = SubmissionService(config.MONGO_URI, config.DATABASE_NAME)
 feedback_generator = ExecutionFeedback()
-member2_integration = Member2Integration(config.MONGO_URI)
 
 @app.route('/api/submit', methods=['POST'])
 def submit_code():
     """
-    Process code submission
-    
+    Called by Member 4 after code execution.
+    Analyzes submission, sends diagnosis to Member 2, returns feedback.
+
     Request body:
     {
-        "student_id": int,
-        "problem_id": int,
+        "submission_id": str,
+        "student_id": str,
+        "problem_id": str,
         "code": str,
-        "test_results": {...},
-        "problem_skills": [str]  // e.g., ["SEARCHING", "ARRAY_TRAVERSAL"]
+        "test_results": {"passed": bool, "failures": [...]},
+        "problem_skills": ["SEARCHING", "ARRAY_TRAVERSAL"],
+        "attempts": int,
+        "solve_time": float
     }
     """
     data = request.json
-    
-    # Convert skill strings to DSASubskill enums
+
     problem_skills = [DSASubskill[s] for s in data.get('problem_skills', [])]
-    
-    # Process submission
+
+    # Process submission and generate feedback
     analysis = submission_service.process_submission(
         student_id=data['student_id'],
         problem_id=data['problem_id'],
@@ -44,14 +45,28 @@ def submit_code():
         test_results=data['test_results'],
         problem_skills=problem_skills
     )
-    
-    # Generate feedback
     feedback = feedback_generator.generate_feedback(analysis)
-    
+
+    # Convert and send to Member 2 learner state backend
+    member2_payload = convert_to_member2_format(
+        submission_id=data['submission_id'],
+        student_id=str(data['student_id']),
+        problem_id=str(data['problem_id']),
+        code=data['code'],
+        test_results=data['test_results'],
+        problem_skills=problem_skills,
+        attempts=data.get('attempts', 1),
+        solve_time=data.get('solve_time', 0)
+    )
+    try:
+        send_to_member2(config.MEMBER2_URL, member2_payload)
+    except Exception:
+        pass  # Member 2 backend may not be running yet
+
     return jsonify({
         'submission_id': analysis['submission_id'],
         'feedback': feedback,
-        'member2_data': {  # Data specifically for Member 2
+        'diagnosis': {
             'skills_correct': [s.value for s in analysis['skills_correct']],
             'skills_incorrect': [s.value for s in analysis['skills_incorrect']],
             'overall_severity': analysis['overall_severity'],
@@ -59,31 +74,7 @@ def submit_code():
         }
     })
 
-@app.route('/api/member2/process', methods=['POST'])
-def member2_process():
-    """
-    Dedicated endpoint for Member 2 integration
-    Returns only what Member 2 needs
-    """
-    data = request.json
-    problem_skills = [DSASubskill[s] for s in data.get('problem_skills', [])]
-    
-    updates = member2_integration.process_and_get_updates(
-        student_id=data['student_id'],
-        problem_id=data['problem_id'],
-        code=data['code'],
-        test_results=data['test_results'],
-        problem_skills=problem_skills
-    )
-    
-    return jsonify({
-        'student_id': updates['student_id'],
-        'problem_id': updates['problem_id'],
-        'skills_to_increase': [s.value for s in updates['skills_to_increase']],
-        'skills_to_decrease': [s.value for s in updates['skills_to_decrease']],
-        'severity': updates['severity'],
-        'submission_id': updates['submission_id']
-    })
+
 
 @app.route('/api/submissions/<int:student_id>', methods=['GET'])
 def get_submissions(student_id):
@@ -100,11 +91,5 @@ def get_submission(submission_id):
         return jsonify(submission)
     return jsonify({'error': 'Submission not found'}), 404
 
-@app.route('/api/member2/skill-performance/<int:student_id>', methods=['GET'])
-def get_skill_performance(student_id):
-    """Get skill performance for Member 2"""
-    performance = member2_integration.get_skill_performance(student_id)
-    return jsonify({'student_id': student_id, 'skill_performance': performance})
-
 if __name__ == '__main__':
-    app.run(debug=True, port=5003)
+    app.run(debug=True, port=5001)
