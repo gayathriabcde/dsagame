@@ -1,0 +1,2516 @@
+[
+  [
+    {
+      "problem_id": 1,
+      "title": "Equal Left and Right Sum Difference",
+      "difficulty": 0.3,
+      "primary_skill": "Prefix Sum",
+      "skills": ["Prefix Sum", "Array Traversal", "Optimization"],
+      "description": "You are given an integer array nums of size N. For every index i, define: leftSum = sum of all elements from index 0 to i−1, rightSum = sum of all elements from index i+1 to N−1. Your task is to find the index i for which the value |leftSum − rightSum| is minimum. If multiple indices give the same minimum value, print the smallest index.",
+      "constraints": "1 ≤ N ≤ 10⁵\n−10⁹ ≤ nums[i] ≤ 10⁹",
+      "input_format": "The first line contains an integer N — size of the array.\nThe second line contains N space-separated integers representing nums.",
+      "output_format": "Print a single integer — the required index.",
+      "test_cases": [
+        {
+          "input": "4\n2 1 3 4",
+          "output": "2"
+        }
+      ]
+    },
+    {
+      "problem_id": 2,
+      "title": "Maximum Frequency After K Increments",
+      "difficulty": 0.7,
+      "primary_skill": "Sliding Window",
+      "skills": ["Sliding Window", "Sorting", "Two Pointers", "Greedy"],
+      "description": "You are given an array of integers nums and an integer K. In one operation, you can choose any index and increase its value by 1. You can perform at most K operations. After performing operations, determine the maximum possible frequency of any element in the array.",
+      "constraints": "1 ≤ N ≤ 10⁵\n0 ≤ nums[i] ≤ 10⁹\n0 ≤ K ≤ 10⁹",
+      "input_format": "First line: integer N\nSecond line: N integers\nThird line: integer K",
+      "output_format": "Print one integer — maximum possible frequency.",
+      "test_cases": [
+        {
+          "input": "3\n1 2 4\n5",
+          "output": "3"
+        }
+      ]
+    },
+    {
+      "problem_id": 3,
+      "title": "Longest Even Sum Prefix",
+      "difficulty": 0.2,
+      "primary_skill": "Prefix Sum",
+      "skills": ["Prefix Sum", "Parity", "Array Traversal"],
+      "description": "You are given an array nums. A prefix is considered valid if the sum of all its elements is even. Find the length of the longest valid prefix.",
+      "constraints": "1 ≤ N ≤ 10⁵\n−10⁹ ≤ nums[i] ≤ 10⁹",
+      "input_format": "First line: integer N\nSecond line: array elements",
+      "output_format": "Print the length of longest valid prefix.",
+      "test_cases": [
+        {
+          "input": "4\n1 3 2 4",
+          "output": "4"
+        }
+      ]
+    },
+    {
+      "problem_id": 4,
+      "title": "Stable Neighbour Positions",
+      "difficulty": 0.2,
+      "primary_skill": "Array Traversal",
+      "skills": ["Array Traversal", "Conditional Logic"],
+      "description": "You are given an array nums and an integer T. An index i is called stable if: |nums[i] − nums[i−1]| ≤ T AND |nums[i] − nums[i+1]| ≤ T. Count how many stable indices exist. Ignore first and last index.",
+      "constraints": "3 ≤ N ≤ 10⁵\n0 ≤ nums[i], T ≤ 10⁹",
+      "input_format": "First line: N\nSecond line: nums\nThird line: T",
+      "output_format": "Print the count of stable indices.",
+      "test_cases": [
+        {
+          "input": "5\n5 7 8 6 9\n2",
+          "output": "2"
+        }
+      ]
+    },
+    {
+      "problem_id": 5,
+      "title": "Replace One Element to Maximize Sum",
+      "difficulty": 0.2,
+      "primary_skill": "Greedy",
+      "skills": ["Greedy", "Array Traversal", "Math"],
+      "description": "You are given an array nums and an integer X. You must replace exactly one element in the array with value X. Return the maximum possible total sum of the array after replacement.",
+      "constraints": "1 ≤ N ≤ 10⁵\n−10⁹ ≤ nums[i], X ≤ 10⁹",
+      "input_format": "First line: N\nSecond line: nums\nThird line: X",
+      "output_format": "Print maximum possible sum.",
+      "test_cases": [
+        {
+          "input": "3\n1 5 3\n10",
+          "output": "18"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "problem_id": 1,
+      "title": "Maximum Subarray After One Multiplication",
+      "difficulty": 0.8,
+      "primary_skill": "Dynamic Programming",
+      "skills": ["Dynamic Programming", "Kadane's Algorithm", "Arrays"],
+      "description": "You are given an integer array nums and an integer k. You are allowed to choose exactly one contiguous subarray and multiply every element in that subarray by k. After performing this operation once, return the maximum possible subarray sum of the resulting array.",
+      "constraints": "1 ≤ nums.length ≤ 10⁵\n−10⁴ ≤ nums[i] ≤ 10⁴\n−10⁴ ≤ k ≤ 10⁴",
+      "input_format": "First line: nums array\nSecond line: integer k",
+      "output_format": "Print the maximum possible subarray sum.",
+      "test_cases": [
+        {
+          "input": "4\n1 -2 3 4\n2",
+          "output": "14"
+        }
+      ]
+    },
+    {
+      "problem_id": 2,
+      "title": "Minimum Range After Removing One Subarray",
+      "difficulty": 0.75,
+      "primary_skill": "Prefix/Suffix Max-Min",
+      "skills": ["Two Pointers", "Prefix Sums", "Sliding Window"],
+      "description": "You are given an integer array nums. You may remove exactly one contiguous subarray (of any length ≥1). After removal, find the minimum possible value of: max(remaining array) − min(remaining array).",
+      "constraints": "2 ≤ nums.length ≤ 10⁵\n0 ≤ nums[i] ≤ 10⁹",
+      "input_format": "First line: integer N\nSecond line: N integers",
+      "output_format": "Print the minimum possible range value.",
+      "test_cases": [
+        {
+          "input": "5\n1 5 6 14 15",
+          "output": "4"
+        }
+      ]
+    },
+    {
+      "problem_id": 3,
+      "title": "Count Subarrays With Sum in Range",
+      "difficulty": 0.85,
+      "primary_skill": "Prefix Sum + Binary Search",
+      "skills": ["Prefix Sum", "Binary Search", "Segment Tree/Fenwick Tree", "Sliding Window (if all positive)"],
+      "description": "You are given array nums and integers L and R. Return the number of subarrays whose sum lies in the range [L, R].",
+      "constraints": "1 ≤ nums.length ≤ 10⁵\n−10⁹ ≤ nums[i] ≤ 10⁹",
+      "input_format": "First line: integer N\nSecond line: N integers\nThird line: L R (range bounds)",
+      "output_format": "Print the total count of valid subarrays.",
+      "test_cases": [
+        {
+          "input": "4\n1 2 3 4\n3 6",
+          "output": "5"
+        }
+      ]
+    },
+    {
+      "problem_id": 4,
+      "title": "Longest Segment With Limited Difference",
+      "difficulty": 0.7,
+      "primary_skill": "Sliding Window",
+      "skills": ["Sliding Window", "Monotonic Queue", "Deque"],
+      "description": "You are given an array nums and integer K. Find the longest contiguous subarray such that: max(subarray) − min(subarray) ≤ K.",
+      "constraints": "1 ≤ nums.length ≤ 10⁵\n0 ≤ nums[i] ≤ 10⁹",
+      "input_format": "First line: integer N\nSecond line: N integers\nThird line: integer K",
+      "output_format": "Print the length of the longest valid subarray.",
+      "test_cases": [
+        {
+          "input": "4\n8 2 4 7\n4",
+          "output": "2"
+        }
+      ]
+    },
+    {
+      "problem_id": 5,
+      "title": "Maximum Score by Picking Elements From Ends",
+      "difficulty": 0.4,
+      "primary_skill": "Sliding Window",
+      "skills": ["Sliding Window", "Prefix Sum", "Greedy"],
+      "description": "You are given an integer array nums and integer k. You can pick exactly k elements from either start or end of the array. Return maximum possible sum.",
+      "constraints": "1 ≤ nums.length ≤ 10⁵\n1 ≤ k ≤ nums.length",
+      "input_format": "First line: integer N\nSecond line: N integers\nThird line: integer k",
+      "output_format": "Print the maximum sum.",
+      "test_cases": [
+        {
+          "input": "7\n1 2 3 4 5 6 1\n3",
+          "output": "12"
+        }
+      ]
+    },
+    {
+      "problem_id": 6,
+      "title": "Partition Array Into Three Balanced Parts",
+      "difficulty": 0.9,
+      "primary_skill": "Prefix Sum",
+      "skills": ["Prefix Sum", "Optimization", "Binary Search"],
+      "description": "You are given an integer array nums. Split it into three contiguous non-empty parts such that: sum(part1) ≤ sum(part2) ≤ sum(part3). Return the maximum possible sum of part2.",
+      "constraints": "3 ≤ nums.length ≤ 2×10⁵\n−10⁹ ≤ nums[i] ≤ 10⁹",
+      "input_format": "First line: integer N\nSecond line: N integers",
+      "output_format": "Print the maximum sum of the middle part.",
+      "test_cases": [
+        {
+          "input": "6\n1 2 3 4 5 6",
+          "output": "9"
+        }
+      ]
+    },
+    {
+      "problem_id": 7,
+      "title": "Maximum Product Subarray After Removing One Element",
+      "difficulty": 0.7,
+      "primary_skill": "Prefix/Suffix Product",
+      "skills": ["Dynamic Programming", "Prefix/Suffix Product", "Arrays"],
+      "description": "You are given an array nums. You must remove exactly one element, then find the maximum product of any contiguous subarray in the remaining array.",
+      "constraints": "2 ≤ nums.length ≤ 10⁵\n−10⁵ ≤ nums[i] ≤ 10⁵",
+      "input_format": "First line: integer N\nSecond line: N integers",
+      "output_format": "Print the maximum contiguous product.",
+      "test_cases": [
+        {
+          "input": "4\n2 3 -2 4",
+          "output": "12"
+        }
+      ]
+    },
+    {
+      "problem_id": 8,
+      "title": "Minimum Operations to Make All Elements Equal",
+      "difficulty": 0.6,
+      "primary_skill": "Difference Array",
+      "skills": ["Difference Array", "Greedy", "Array Traversal"],
+      "description": "You are given an integer array nums. In one operation: choose any contiguous segment and add integer X (positive or negative) to all elements. Find minimum operations required to make all elements equal.",
+      "constraints": "1 ≤ nums.length ≤ 10⁵\n−10⁹ ≤ nums[i] ≤ 10⁹",
+      "input_format": "First line: integer N\nSecond line: N integers",
+      "output_format": "Print the minimum number of operations.",
+      "test_cases": [
+        {
+          "input": "4\n1 3 2 2",
+          "output": "2"
+        }
+      ]
+    },
+    {
+      "problem_id": 9,
+      "title": "Count Valid Pairs With Index Distance Constraint",
+      "difficulty": 0.8,
+      "primary_skill": "Sliding Window + Data Structure",
+      "skills": ["Fenwick Tree", "Binary Indexed Tree", "Two Pointers", "Sorting"],
+      "description": "You are given array nums, integer D, and integer S. Count pairs (i, j) such that: i < j, j − i ≤ D, and nums[i] + nums[j] ≤ S.",
+      "constraints": "1 ≤ nums.length ≤ 2×10⁵\n0 ≤ D, S, nums[i] ≤ 10⁹",
+      "input_format": "First line: N D S\nSecond line: N integers representing nums",
+      "output_format": "Print the count of valid pairs.",
+      "test_cases": [
+        {
+          "input": "4 2 8\n1 3 5 7",
+          "output": "3"
+        }
+      ]
+    },
+    {
+      "problem_id": 10,
+      "title": "Maximum Subarray Sum With Length Range",
+      "difficulty": 0.85,
+      "primary_skill": "Monotonic Queue",
+      "skills": ["Monotonic Queue", "Prefix Sum", "Sliding Window"],
+      "description": "You are given array nums and integers L and R. Find maximum sum of a subarray whose length lies in the range [L, R].",
+      "constraints": "1 ≤ nums.length ≤ 2×10⁵\n1 ≤ L ≤ R ≤ nums.length",
+      "input_format": "First line: N L R\nSecond line: N integers",
+      "output_format": "Print the maximum subarray sum found.",
+      "test_cases": [
+        {
+          "input": "6 2 4\n1 -2 3 4 -1 2",
+          "output": "8"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "problem_id": 1,
+      "title": "Count Good Substrings",
+      "difficulty": 0.4,
+      "primary_skill": "Sliding Window",
+      "skills": ["Sliding Window", "Frequency Array", "Strings"],
+      "description": "You are given a string S consisting of lowercase English letters. A substring is called good if all characters in it are distinct. Find the total number of good substrings of length exactly K.",
+      "constraints": "1 ≤ |S| ≤ 10⁵\n1 ≤ K ≤ 26",
+      "input_format": "The first line contains string S.\nThe second line contains integer K.",
+      "output_format": "Print one integer — number of good substrings.",
+      "test_cases": [
+        {
+          "input": "abcabc\n3",
+          "output": "4"
+        }
+      ]
+    },
+    {
+      "problem_id": 2,
+      "title": "Minimum Changes to Make Alternating String",
+      "difficulty": 0.3,
+      "primary_skill": "Greedy",
+      "skills": ["String Manipulation", "Parity", "Greedy"],
+      "description": "You are given a binary string S. In one operation, you can flip any character (0→1 or 1→0). Find the minimum number of operations required to make the string alternating (e.g., 010101... or 101010...).",
+      "constraints": "1 ≤ |S| ≤ 10⁵",
+      "input_format": "Single line containing string S.",
+      "output_format": "Print minimum operations required.",
+      "test_cases": [
+        {
+          "input": "0011",
+          "output": "1"
+        }
+      ]
+    },
+    {
+      "problem_id": 3,
+      "title": "Longest Prefix Which Is Also Suffix",
+      "difficulty": 0.5,
+      "primary_skill": "KMP Algorithm",
+      "skills": ["String Matching", "KMP Algorithm (LPS)", "Prefix Function"],
+      "description": "You are given a string S. Find the length of the longest prefix which is also a suffix (excluding the whole string itself).",
+      "constraints": "1 ≤ |S| ≤ 10⁵",
+      "input_format": "Single string S.",
+      "output_format": "Print the length.",
+      "test_cases": [
+        {
+          "input": "ababa",
+          "output": "3"
+        }
+      ]
+    },
+    {
+      "problem_id": 4,
+      "title": "Remove Consecutive Duplicates",
+      "difficulty": 0.2,
+      "primary_skill": "String Traversal",
+      "skills": ["String Manipulation", "Two Pointers"],
+      "description": "You are given string S. Remove characters such that no two adjacent characters are the same. Only keep the first character of any consecutive run of duplicates.",
+      "constraints": "1 ≤ |S| ≤ 10⁵",
+      "input_format": "Single string S.",
+      "output_format": "Print updated string.",
+      "test_cases": [
+        {
+          "input": "aaabbcca",
+          "output": "abca"
+        }
+      ]
+    },
+    {
+      "problem_id": 5,
+      "title": "Character With Maximum Distance",
+      "difficulty": 0.3,
+      "primary_skill": "Hash Map",
+      "skills": ["Hash Map", "Frequency Tracking", "String Traversal"],
+      "description": "You are given string S. For every character, compute the distance between its first and last occurrence. Return the character having the maximum such distance. If there is a tie, return the lexicographically smallest character.",
+      "constraints": "1 ≤ |S| ≤ 10⁵",
+      "input_format": "Single string S.",
+      "output_format": "Print the character.",
+      "test_cases": [
+        {
+          "input": "abcaac",
+          "output": "a"
+        }
+      ]
+    },
+    {
+      "problem_id": 1,
+      "title": "Longest Substring With At Most K Distinct Characters",
+      "difficulty": 0.6,
+      "primary_skill": "Sliding Window",
+      "skills": ["Sliding Window", "Two Pointers", "Hash Map"],
+      "description": "You are given a string S consisting of lowercase English letters and an integer K. Find the length of the longest substring that contains at most K distinct characters.",
+      "constraints": "1 ≤ |S| ≤ 10⁵\n1 ≤ K ≤ 26",
+      "input_format": "First line: string S\nSecond line: integer K",
+      "output_format": "Print a single integer — maximum length.",
+      "test_cases": [
+        {
+          "input": "eceba\n2",
+          "output": "3"
+        }
+      ]
+    },
+    {
+      "problem_id": 2,
+      "title": "Minimum Deletions to Make Character Frequencies Unique",
+      "difficulty": 0.5,
+      "primary_skill": "Greedy",
+      "skills": ["Greedy", "Hash Map", "Sorting"],
+      "description": "You are given a string S. Delete the minimum number of characters so that no two characters have the same frequency. A frequency of 0 is allowed and does not need to be unique.",
+      "constraints": "1 ≤ |S| ≤ 10⁵",
+      "input_format": "Single string S",
+      "output_format": "Print minimum deletions required.",
+      "test_cases": [
+        {
+          "input": "aaabbbcc",
+          "output": "2"
+        }
+      ]
+    },
+    {
+      "problem_id": 3,
+      "title": "Count Palindromic Substrings of Length ≥ K",
+      "difficulty": 0.7,
+      "primary_skill": "Dynamic Programming",
+      "skills": ["Dynamic Programming", "Manacher's Algorithm", "Two Pointers"],
+      "description": "You are given a string S and an integer K. Count all substrings that are palindromes and have a length greater than or equal to K.",
+      "constraints": "1 ≤ |S| ≤ 5000",
+      "input_format": "Line 1: string S\nLine 2: integer K",
+      "output_format": "Print count.",
+      "test_cases": [
+        {
+          "input": "ababa\n3",
+          "output": "3"
+        }
+      ]
+    },
+    {
+      "problem_id": 4,
+      "title": "Lexicographically Smallest String After K Swaps",
+      "difficulty": 0.8,
+      "primary_skill": "Greedy",
+      "skills": ["Greedy", "Data Structures", "Fenwick Tree"],
+      "description": "You are given string S and integer K. In one operation, you can swap any two adjacent characters. Find the lexicographically smallest string possible after performing at most K swaps.",
+      "constraints": "1 ≤ |S| ≤ 10⁵\n0 ≤ K ≤ 10⁹",
+      "input_format": "Line 1: string S\nLine 2: integer K",
+      "output_format": "Print resulting string.",
+      "test_cases": [
+        {
+          "input": "dcab\n2",
+          "output": "acdb"
+        }
+      ]
+    },
+    {
+      "problem_id": 5,
+      "title": "Longest Repeating Substring After One Replacement",
+      "difficulty": 0.6,
+      "primary_skill": "Sliding Window",
+      "skills": ["Sliding Window", "Two Pointers", "String Manipulation"],
+      "description": "You are given a string S. You may replace at most one character with any lowercase letter. Find the length of the longest substring where all characters are the same.",
+      "constraints": "1 ≤ |S| ≤ 10⁵",
+      "input_format": "Single string S.",
+      "output_format": "Print maximum length.",
+      "test_cases": [
+        {
+          "input": "aababba",
+          "output": "4"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "problem_id": 1,
+      "title": "Count Distinct Subsequences Equal to Target",
+      "difficulty": 0.85,
+      "primary_skill": "Dynamic Programming",
+      "skills": ["Dynamic Programming", "Strings", "Combinatorics"],
+      "description": "You are given strings S and T. Count the number of distinct subsequences of S that are equal to T. Since the answer can be large, return the result modulo 10⁹+7.",
+      "constraints": "1 ≤ |S| ≤ 2000\n1 ≤ |T| ≤ 1000",
+      "input_format": "Line 1: string S\nLine 2: string T",
+      "output_format": "Print the total count of subsequences modulo 10⁹+7.",
+      "test_cases": [
+        {
+          "input": "babgbag\nbag",
+          "output": "5"
+        }
+      ]
+    },
+    {
+      "problem_id": 2,
+      "title": "Minimum Insertions to Make String Palindrome",
+      "difficulty": 0.75,
+      "primary_skill": "Dynamic Programming",
+      "skills": ["Dynamic Programming", "Longest Common Subsequence", "Palindromes"],
+      "description": "You are given a string S. In one operation, you can insert any character anywhere in the string. Find the minimum number of insertions required to make the string a palindrome.",
+      "constraints": "1 ≤ |S| ≤ 2000",
+      "input_format": "Single string S.",
+      "output_format": "Print the minimum operations required.",
+      "test_cases": [
+        {
+          "input": "abcda",
+          "output": "2"
+        }
+      ]
+    },
+    {
+      "problem_id": 3,
+      "title": "Longest Substring Appearing At Least K Times",
+      "difficulty": 0.9,
+      "primary_skill": "Divide and Conquer",
+      "skills": ["Divide and Conquer", "Sliding Window", "Recursion"],
+      "description": "You are given string S and an integer K. Find the length of the longest substring where every unique character in that substring appears at least K times.",
+      "constraints": "1 ≤ |S| ≤ 10⁵\n1 ≤ K ≤ 10⁵",
+      "input_format": "Line 1: string S\nLine 2: integer K",
+      "output_format": "Print the length of the longest valid substring.",
+      "test_cases": [
+        {
+          "input": "aaabbcc\n2",
+          "output": "5"
+        }
+      ]
+    },
+    {
+      "problem_id": 4,
+      "title": "Minimum Cost to Convert One String to Another",
+      "difficulty": 0.4,
+      "primary_skill": "Greedy",
+      "skills": ["Math", "String Traversal", "ASCII"],
+      "description": "You are given two strings A and B of equal length. An operation consists of changing character A[i] to B[i] with a cost equal to the absolute difference between their alphabet positions ($|A[i] - B[i]|$). Find the total minimum cost to convert A into B.",
+      "constraints": "1 ≤ |A| ≤ 10⁵",
+      "input_format": "Line 1: string A\nLine 2: string B",
+      "output_format": "Print the total minimum cost.",
+      "test_cases": [
+        {
+          "input": "abcd\nbcdf",
+          "output": "5"
+        }
+      ]
+    },
+    {
+      "problem_id": 5,
+      "title": "Dynamic Queries on String Frequencies",
+      "difficulty": 0.95,
+      "primary_skill": "Segment Tree / BIT",
+      "skills": ["Fenwick Tree", "Bitmasking", "Range Queries", "String Hashing"],
+      "description": "You are given string S. You need to process Q queries of two types:\nType 1: Update index i with character c.\nType 2: Check if the substring from index l to r can be rearranged into a palindrome. A substring can form a palindrome if at most one character has an odd frequency.",
+      "constraints": "1 ≤ |S|, Q ≤ 2×10⁵",
+      "input_format": "Line 1: string S\nLine 2: integer Q\nNext Q lines: queries in format '1 i c' or '2 l r'",
+      "output_format": "For each type-2 query, print YES if it can form a palindrome, otherwise print NO.",
+      "test_cases": [
+        {
+          "input": "aabb\n3\n2 1 4\n1 2 c\n2 1 4",
+          "output": "YES\nNO"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "problem_id": 1,
+      "title": "Pair With Given Sum in Sorted Array",
+      "difficulty": 0.2,
+      "primary_skill": "Two Pointers",
+      "skills": ["Two Pointers", "Array Traversal"],
+      "description": "You are given a sorted integer array nums of length N and an integer target. Find if there exists a pair (i, j) such that i < j and nums[i] + nums[j] = target. Print YES if such a pair exists, otherwise print NO.",
+      "constraints": "2 ≤ N ≤ 10⁵\n−10⁹ ≤ nums[i], target ≤ 10⁹",
+      "input_format": "First line: integer N\nSecond line: N space-separated integers\nThird line: integer target",
+      "output_format": "Print YES or NO.",
+      "test_cases": [
+        {
+          "input": "5\n1 2 3 4 6\n6",
+          "output": "YES"
+        }
+      ]
+    },
+    {
+      "problem_id": 2,
+      "title": "Remove Duplicates From Sorted Array",
+      "difficulty": 0.2,
+      "primary_skill": "Two Pointers",
+      "skills": ["Two Pointers", "In-place Manipulation"],
+      "description": "You are given a sorted array nums. Remove duplicates in-place such that each element appears only once and return the count of unique elements.",
+      "constraints": "1 ≤ N ≤ 10⁵",
+      "input_format": "First line: integer N\nSecond line: sorted array nums",
+      "output_format": "Print the number of unique elements.",
+      "test_cases": [
+        {
+          "input": "7\n1 1 2 2 3 4 4",
+          "output": "4"
+        }
+      ]
+    },
+    {
+      "problem_id": 3,
+      "title": "Check Palindrome String",
+      "difficulty": 0.1,
+      "primary_skill": "Two Pointers",
+      "skills": ["Two Pointers", "String Manipulation"],
+      "description": "You are given a string S. Check if the string is a palindrome considering only lowercase characters.",
+      "constraints": "1 ≤ |S| ≤ 10⁵",
+      "input_format": "Single string S.",
+      "output_format": "Print YES if palindrome else NO.",
+      "test_cases": [
+        {
+          "input": "level",
+          "output": "YES"
+        }
+      ]
+    },
+    {
+      "problem_id": 4,
+      "title": "Move Zeros to End",
+      "difficulty": 0.2,
+      "primary_skill": "Two Pointers",
+      "skills": ["Two Pointers", "Array Traversal"],
+      "description": "You are given an array nums. Move all zeros to the end while maintaining order of non-zero elements.",
+      "constraints": "1 ≤ N ≤ 10⁵",
+      "input_format": "First line: N\nSecond line: array nums",
+      "output_format": "Print modified array.",
+      "test_cases": [
+        {
+          "input": "5\n0 1 0 3 12",
+          "output": "1 3 12 0 0"
+        }
+      ]
+    },
+    {
+      "problem_id": 5,
+      "title": "Count Valid Pairs With Difference ≤ K",
+      "difficulty": 0.4,
+      "primary_skill": "Two Pointers",
+      "skills": ["Two Pointers", "Sliding Window", "Sorted Arrays"],
+      "description": "You are given sorted array nums and integer K. Count pairs (i,j) such that i < j and nums[j] − nums[i] ≤ K.",
+      "constraints": "1 ≤ N ≤ 10⁵",
+      "input_format": "First line: N\nSecond line: nums\nThird line: K",
+      "output_format": "Print count.",
+      "test_cases": [
+        {
+          "input": "4\n1 3 5 6\n2",
+          "output": "3"
+        }
+      ]
+    },
+    {
+      "problem_id": 6,
+      "title": "Container With Maximum Area Variant",
+      "difficulty": 0.6,
+      "primary_skill": "Two Pointers",
+      "skills": ["Two Pointers", "Greedy", "Math"],
+      "description": "You are given array height. Choose two indices i < j such that the area defined by min(height[i], height[j]) × (j − i) is maximum, provided the width (j - i) is at least K. Return maximum area.",
+      "constraints": "2 ≤ N ≤ 10⁵\n0 ≤ height[i] ≤ 10⁴",
+      "input_format": "First line: integer N\nSecond line: N integers representing height\nThird line: integer K",
+      "output_format": "Print the maximum area.",
+      "test_cases": [
+        {
+          "input": "9\n1 8 6 2 5 4 8 3 7\n2",
+          "output": "49"
+        }
+      ]
+    },
+    {
+      "problem_id": 7,
+      "title": "Longest Subarray With At Most K Zeros",
+      "difficulty": 0.5,
+      "primary_skill": "Sliding Window",
+      "skills": ["Two Pointers", "Sliding Window", "Binary Array"],
+      "description": "Given binary array nums and integer K. You may flip at most K zeros to ones. Return maximum length subarray containing only ones.",
+      "constraints": "1 ≤ N ≤ 10⁵",
+      "input_format": "First line: N\nSecond line: N integers (0s and 1s)\nThird line: K",
+      "output_format": "Print maximum length.",
+      "test_cases": [
+        {
+          "input": "11\n1 1 1 0 0 0 1 1 1 1 0\n2",
+          "output": "6"
+        }
+      ]
+    },
+    {
+      "problem_id": 8,
+      "title": "Count Triplets With Sum < Target",
+      "difficulty": 0.6,
+      "primary_skill": "Two Pointers",
+      "skills": ["Two Pointers", "Sorting", "Triplets"],
+      "description": "Given array nums, count triplets (i,j,k) such that i < j < k and nums[i] + nums[j] + nums[k] < target.",
+      "constraints": "1 ≤ N ≤ 3000",
+      "input_format": "First line: N\nSecond line: N integers\nThird line: target",
+      "output_format": "Print count.",
+      "test_cases": [
+        {
+          "input": "4\n-2 0 1 3\n2",
+          "output": "2"
+        }
+      ]
+    },
+    {
+      "problem_id": 9,
+      "title": "Minimum Length Subarray With Sum ≥ Target",
+      "difficulty": 0.5,
+      "primary_skill": "Sliding Window",
+      "skills": ["Sliding Window", "Two Pointers", "Positive Integers"],
+      "description": "Given positive array nums and integer target. Find smallest subarray length whose sum ≥ target.",
+      "constraints": "1 ≤ N ≤ 10⁵",
+      "input_format": "First line: N\nSecond line: N positive integers\nThird line: target",
+      "output_format": "Print smallest length.",
+      "test_cases": [
+        {
+          "input": "6\n2 3 1 2 4 3\n7",
+          "output": "2"
+        }
+      ]
+    },
+    {
+      "problem_id": 10,
+      "title": "Count Pairs Across Two Arrays",
+      "difficulty": 0.5,
+      "primary_skill": "Two Pointers",
+      "skills": ["Two Pointers", "Sorted Arrays", "Optimization"],
+      "description": "Given two sorted arrays A and B. Count pairs (i,j) such that A[i] + B[j] ≤ X.",
+      "constraints": "1 ≤ N,M ≤ 10⁵",
+      "input_format": "First line: N M X\nSecond line: N sorted integers (Array A)\nThird line: M sorted integers (Array B)",
+      "output_format": "Print the total count of valid pairs.",
+      "test_cases": [
+        {
+          "input": "3 3 5\n1 2 3\n2 3 4",
+          "output": "5"
+        }
+      ]
+    },
+    {
+      "problem_id": 11,
+      "title": "Longest Subarray With Difference Between Max and Min ≤ K",
+      "difficulty": 0.8,
+      "primary_skill": "Sliding Window + Monotonic Queue",
+      "skills": ["Sliding Window", "Monotonic Queue", "Deque", "Two Pointers"],
+      "description": "Given array nums and integer K. Find longest contiguous subarray where: max(subarray) − min(subarray) ≤ K.",
+      "constraints": "1 ≤ N ≤ 2×10⁵",
+      "input_format": "First line: N K\nSecond line: N integers",
+      "output_format": "Print the length of the longest subarray.",
+      "test_cases": [
+        {
+          "input": "4 4\n8 2 4 7",
+          "output": "2"
+        }
+      ]
+    },
+    {
+      "problem_id": 12,
+      "title": "Count Valid Triangles",
+      "difficulty": 0.7,
+      "primary_skill": "Two Pointers",
+      "skills": ["Sorting", "Two Pointers", "Geometry Logic"],
+      "description": "Given sorted array nums representing side lengths. Count number of triplets that can form a valid triangle. The condition for a triangle is that the sum of any two sides must be greater than the third: a + b > c.",
+      "constraints": "1 ≤ N ≤ 2000",
+      "input_format": "First line: N\nSecond line: N integers representing side lengths",
+      "output_format": "Print the count of valid triplets.",
+      "test_cases": [
+        {
+          "input": "4\n2 2 3 4",
+          "output": "3"
+        }
+      ]
+    },
+    {
+      "problem_id": 13,
+      "title": "Minimum Operations to Make Array Peaks Valid",
+      "difficulty": 0.9,
+      "primary_skill": "Sliding Window / Greedy",
+      "skills": ["Two Pointers", "Dynamic Programming", "Peak Condition Optimization"],
+      "description": "You are given an integer array arr of size N. An index i (where 1 ≤ i ≤ N−2) is called a peak if: arr[i] > arr[i−1] and arr[i] > arr[i+1]. You are allowed to perform the following operation any number of times: choose an index i and increase or decrease arr[i] by 1. Make at least K peak indices with minimum operations. Return the minimum operations required, or -1 if impossible.",
+      "constraints": "3 ≤ N ≤ 10⁵\n0 ≤ K ≤ N\n-10⁴ ≤ arr[i] ≤ 10⁴",
+      "input_format": "First line: Two integers N and K\nSecond line: N space-separated integers representing the array",
+      "output_format": "Print a single integer — minimum number of operations required.",
+      "test_cases": [
+        {
+          "input": "7 2\n1 2 3 2 1 2 1",
+          "output": "1"
+        }
+      ]
+    },
+    {
+      "problem_id": 14,
+      "title": "Minimum Swaps to Group All Ones Together",
+      "difficulty": 0.7,
+      "primary_skill": "Sliding Window",
+      "skills": ["Sliding Window", "Fixed Window Size", "Binary Array"],
+      "description": "Given a binary array, return the minimum number of swaps required to bring all ones together in any contiguous segment.",
+      "constraints": "1 ≤ N ≤ 10⁵",
+      "input_format": "First line: N\nSecond line: N integers (0s and 1s)",
+      "output_format": "Print the minimum number of swaps.",
+      "test_cases": [
+        {
+          "input": "5\n1 0 1 0 1",
+          "output": "1"
+        }
+      ]
+    },
+    {
+      "problem_id": 15,
+      "title": "Maximum Triplet Product Under Distance Constraint",
+      "difficulty": 0.9,
+      "primary_skill": "Sliding Window + Data Structures",
+      "skills": ["Sliding Window", "Two Pointers", "Monotonic Queue", "Math"],
+      "description": "You are given an integer array nums of size N and an integer D. Find three indices (i, j, k) such that i < j < k and (k − i) ≤ D. Among all such valid triplets, maximize the value: nums[i] × nums[j] × nums[k]. Return the maximum possible product. If no such triplet exists, print -1.",
+      "constraints": "1 ≤ N ≤ 10⁵\n1 ≤ D ≤ 10⁵\n-10⁴ ≤ nums[i] ≤ 10⁴",
+      "input_format": "First line: N D\nSecond line: N space-separated integers representing nums",
+      "output_format": "Print the maximum possible product or -1.",
+      "test_cases": [
+        {
+          "input": "6 3\n1 5 2 4 3 6",
+          "output": "120"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "problem_id": 1,
+      "title": "First Position Greater Than Target",
+      "difficulty": 0.2,
+      "primary_skill": "Binary Search",
+      "skills": ["Binary Search", "Upper Bound"],
+      "description": "You are given a sorted integer array arr of size N and an integer X. Find the first index where the value is strictly greater than X. If no such index exists, print -1.",
+      "constraints": "1 ≤ N ≤ 10^5\n−10^9 ≤ arr[i], X ≤ 10^9",
+      "input_format": "First line: N X\nSecond line: N space-separated integers",
+      "output_format": "Print the index (0-based).",
+      "test_cases": [
+        {
+          "input": "6 4\n1 2 4 4 6 9",
+          "output": "4"
+        },
+        {
+          "input": "5 10\n1 3 5 7 9",
+          "output": "-1"
+        }
+      ]
+    },
+    {
+      "problem_id": 2,
+      "title": "Count Numbers ≤ X",
+      "difficulty": 0.2,
+      "primary_skill": "Binary Search",
+      "skills": ["Binary Search", "Lower Bound", "Array Counting"],
+      "description": "Given a sorted array arr and integer X, count how many elements are less than or equal to X.",
+      "constraints": "1 ≤ N ≤ 10^5\n−10^9 ≤ arr[i], X ≤ 10^9",
+      "input_format": "First line: N X\nSecond line: arr elements",
+      "output_format": "Print the count.",
+      "test_cases": [
+        {
+          "input": "7 5\n1 2 3 5 5 6 8",
+          "output": "5"
+        }
+      ]
+    },
+    {
+      "problem_id": 3,
+      "title": "Find Floor Value",
+      "difficulty": 0.2,
+      "primary_skill": "Binary Search",
+      "skills": ["Binary Search", "Floor Search"],
+      "description": "Given a sorted array and integer X, find the largest element that is less than or equal to X. If no such element exists, print -1.",
+      "constraints": "1 ≤ N ≤ 10^5\n−10^9 ≤ arr[i], X ≤ 10^9",
+      "input_format": "First line: N X\nSecond line: N integers",
+      "output_format": "Print the floor value.",
+      "test_cases": [
+        {
+          "input": "6 7\n1 2 4 6 9 12",
+          "output": "6"
+        }
+      ]
+    },
+    {
+      "problem_id": 4,
+      "title": "Perfect Square Check",
+      "difficulty": 0.3,
+      "primary_skill": "Binary Search",
+      "skills": ["Binary Search", "Math"],
+      "description": "Given an integer N, determine if it is a perfect square using binary search. If yes, print YES, otherwise print NO.",
+      "constraints": "1 ≤ N ≤ 10^12",
+      "input_format": "Single integer N",
+      "output_format": "Print YES or NO.",
+      "test_cases": [
+        {
+          "input": "49",
+          "output": "YES"
+        }
+      ]
+    },
+    {
+      "problem_id": 5,
+      "title": "Minimum Element in Rotated Sorted Array",
+      "difficulty": 0.4,
+      "primary_skill": "Binary Search",
+      "skills": ["Binary Search", "Rotated Sorted Array"],
+      "description": "A sorted array is rotated an unknown number of times. Find the minimum element in the array.",
+      "constraints": "1 ≤ N ≤ 10^5\n−10^9 ≤ arr[i] ≤ 10^9",
+      "input_format": "First line: N\nSecond line: N integers",
+      "output_format": "Print the minimum element.",
+      "test_cases": [
+        {
+          "input": "7\n5 6 7 1 2 3 4",
+          "output": "1"
+        }
+      ]
+    },
+    {
+      "problem_id": 6,
+      "title": "Minimum Time to Complete Tasks",
+      "difficulty": 0.6,
+      "primary_skill": "Binary Search on Answer",
+      "skills": ["Binary Search", "Greedy", "Math"],
+      "description": "You are given N machines. Machine i takes arr[i] minutes to complete one task. Find the minimum time required to complete M tasks if all machines work simultaneously.",
+      "constraints": "1 ≤ N ≤ 10^5\n1 ≤ M ≤ 10^9\n1 ≤ arr[i] ≤ 10^6",
+      "input_format": "First line: N M\nSecond line: arr elements",
+      "output_format": "Print the minimum time.",
+      "test_cases": [
+        {
+          "input": "3 7\n1 3 4",
+          "output": "7"
+        }
+      ]
+    },
+    {
+      "problem_id": 7,
+      "title": "Kth Missing Positive Number",
+      "difficulty": 0.5,
+      "primary_skill": "Binary Search",
+      "skills": ["Binary Search", "Array Logic"],
+      "description": "Given a sorted positive array, find the K-th missing positive integer.",
+      "constraints": "1 ≤ N, K ≤ 10^5\n1 ≤ arr[i] ≤ 10^6",
+      "input_format": "First line: N K\nSecond line: N integers",
+      "output_format": "Print the K-th missing number.",
+      "test_cases": [
+        {
+          "input": "5 4\n2 3 7 11 12",
+          "output": "6"
+        }
+      ]
+    },
+    {
+      "problem_id": 8,
+      "title": "Allocate Books",
+      "difficulty": 0.7,
+      "primary_skill": "Binary Search on Answer",
+      "skills": ["Binary Search", "Greedy", "Subarray Partitioning"],
+      "description": "Given N books with various page counts and S students, assign continuous books to students to minimize the maximum number of pages assigned to any one student.",
+      "constraints": "1 ≤ N ≤ 10^5\n1 ≤ S ≤ N\n1 ≤ pages[i] ≤ 10^5",
+      "input_format": "First line: N S\nSecond line: N integers representing pages",
+      "output_format": "Print the minimized maximum pages.",
+      "test_cases": [
+        {
+          "input": "4 2\n10 20 30 40",
+          "output": "60"
+        }
+      ]
+    },
+    {
+      "problem_id": 9,
+      "title": "Find Peak Element",
+      "difficulty": 0.5,
+      "primary_skill": "Binary Search",
+      "skills": ["Binary Search", "Array Properties"],
+      "description": "Find any index i such that arr[i] is strictly greater than its neighbors. For elements at the boundary, only the single existing neighbor is considered.",
+      "constraints": "1 ≤ N ≤ 10^5\n−10^9 ≤ arr[i] ≤ 10^9",
+      "input_format": "First line: N\nSecond line: N integers",
+      "output_format": "Print any peak index.",
+      "test_cases": [
+        {
+          "input": "6\n1 3 20 4 1 0",
+          "output": "2"
+        }
+      ]
+    },
+    {
+      "problem_id": 10,
+      "title": "Minimum Eating Speed",
+      "difficulty": 0.6,
+      "primary_skill": "Binary Search on Answer",
+      "skills": ["Binary Search", "Math", "Optimization"],
+      "description": "You have piles of food. You can eat k items per hour. Find the minimum eating speed k to finish all piles within H hours.",
+      "constraints": "1 ≤ piles.length ≤ 10^5\npiles.length ≤ H ≤ 10^9\n1 ≤ piles[i] ≤ 10^9",
+      "input_format": "First line: N H\nSecond line: N integers (piles)",
+      "output_format": "Print minimum speed k.",
+      "test_cases": [
+        {
+          "input": "4 8\n3 6 7 11",
+          "output": "4"
+        }
+      ]
+    },
+    {
+      "problem_id": 11,
+      "title": "Maximum Median After K Increments",
+      "difficulty": 0.8,
+      "primary_skill": "Binary Search on Answer",
+      "skills": ["Binary Search", "Sorting", "Greedy"],
+      "description": "You are given an array of size N and K operations. In one operation, you can increase any element by 1. Find the maximum possible median of the array after at most K operations.",
+      "constraints": "1 ≤ N ≤ 2*10^5\n1 ≤ K ≤ 10^9\n1 ≤ arr[i] ≤ 10^9",
+      "input_format": "First line: N K\nSecond line: N integers",
+      "output_format": "Print the maximum possible median.",
+      "test_cases": [
+        {
+          "input": "5 5\n1 2 4 5 6",
+          "output": "6"
+        }
+      ]
+    },
+    {
+      "problem_id": 12,
+      "title": "Split Array to Minimize Largest Sum",
+      "difficulty": 0.8,
+      "primary_skill": "Binary Search on Answer",
+      "skills": ["Binary Search", "Dynamic Programming (Optimized)", "Greedy"],
+      "description": "Split the given array into K contiguous subarrays such that the maximum sum among these subarrays is minimized.",
+      "constraints": "1 ≤ N ≤ 10^5\n1 ≤ K ≤ N\n0 ≤ arr[i] ≤ 10^6",
+      "input_format": "First line: N K\nSecond line: N integers",
+      "output_format": "Print the minimized maximum sum.",
+      "test_cases": [
+        {
+          "input": "5 2\n7 2 5 10 8",
+          "output": "18"
+        }
+      ]
+    },
+    {
+      "problem_id": 13,
+      "title": "Aggressive Cows Variant",
+      "difficulty": 0.8,
+      "primary_skill": "Binary Search on Answer",
+      "skills": ["Binary Search", "Greedy", "Sorting"],
+      "description": "Place K routers in houses at sorted positions. Maximize the minimum distance between any two routers.",
+      "constraints": "2 ≤ N ≤ 10^5\n2 ≤ K ≤ N\n0 ≤ positions[i] ≤ 10^9",
+      "input_format": "First line: N K\nSecond line: N integers representing positions",
+      "output_format": "Print the maximum possible minimum distance.",
+      "test_cases": [
+        {
+          "input": "5 3\n1 2 8 12 17",
+          "output": "7"
+        }
+      ]
+    },
+    {
+      "problem_id": 14,
+      "title": "Minimum Days to Make Bouquets",
+      "difficulty": 0.8,
+      "primary_skill": "Binary Search on Answer",
+      "skills": ["Binary Search", "Greedy", "Array Traversal"],
+      "description": "Each flower blooms on a specific day. You need to make M bouquets, each using K adjacent bloomed flowers. Find the minimum day on which you can complete the bouquets.",
+      "constraints": "1 ≤ N ≤ 10^5\n1 ≤ M, K ≤ 10^5",
+      "input_format": "First line: N M K\nSecond line: N integers representing bloom days",
+      "output_format": "Print the minimum day, or -1 if impossible.",
+      "test_cases": [
+        {
+          "input": "6 2 2\n1 10 3 10 2 5",
+          "output": "10"
+        }
+      ]
+    },
+    {
+      "problem_id": 15,
+      "title": "Smallest Divisor Under Threshold",
+      "difficulty": 0.7,
+      "primary_skill": "Binary Search on Answer",
+      "skills": ["Binary Search", "Math", "Optimization"],
+      "description": "Find the smallest divisor d such that the sum of the results of dividing all array elements by d (using the ceiling function) is less than or equal to a given threshold.",
+      "constraints": "1 ≤ N ≤ 10^5\nN ≤ threshold ≤ 10^6\n1 ≤ arr[i] ≤ 10^6",
+      "input_format": "First line: N threshold\nSecond line: N integers",
+      "output_format": "Print the smallest divisor d.",
+      "test_cases": [
+        {
+          "input": "4 6\n1 2 5 9",
+          "output": "5"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "problem_id": 1,
+      "title": "First Unique Element Position",
+      "difficulty": 0.2,
+      "primary_skill": "Hash Map",
+      "skills": ["Frequency Counting", "Array Traversal"],
+      "description": "You are given an integer array A of size N. Find the first index (0-based) where the element appears exactly once in the entire array. If no such element exists, print -1.",
+      "constraints": "1 ≤ N ≤ 200000\n−10^9 ≤ Ai ≤ 10^9",
+      "input_format": "N\nA1 A2 A3 ... AN",
+      "output_format": "Single integer — index",
+      "test_cases": [
+        {
+          "input": "6\n4 5 1 2 1 5",
+          "output": "0"
+        }
+      ]
+    },
+    {
+      "problem_id": 2,
+      "title": "Equal Pair Frequency",
+      "difficulty": 0.2,
+      "primary_skill": "Hash Map",
+      "skills": ["Frequency Counting"],
+      "description": "Given array A of size N, count how many values appear exactly twice.",
+      "constraints": "1 ≤ N ≤ 10^5",
+      "input_format": "N\nA1 A2 ... AN",
+      "output_format": "Single integer",
+      "test_cases": [
+        {
+          "input": "7\n1 2 2 3 3 3 4",
+          "output": "1"
+        }
+      ]
+    },
+    {
+      "problem_id": 3,
+      "title": "Sum Pair Exists",
+      "difficulty": 0.3,
+      "primary_skill": "Hashing",
+      "skills": ["Two Sum", "Set"],
+      "description": "Given array A and integer K, determine if there exists any pair (i,j) such that Ai + Aj = K and i ≠ j. Print 'YES' or 'NO'.",
+      "constraints": "1 ≤ N ≤ 10^5",
+      "input_format": "N K\nA1 A2 ... AN",
+      "output_format": "YES or NO",
+      "test_cases": [
+        {
+          "input": "5 8\n3 1 7 5 2",
+          "output": "YES"
+        }
+      ]
+    },
+    {
+      "problem_id": 4,
+      "title": "Frequency Greater Than K",
+      "difficulty": 0.3,
+      "primary_skill": "Hash Map",
+      "skills": ["Frequency Counting", "Sorting"],
+      "description": "Given an array and integer K, print all elements whose frequency is strictly greater than K. Output elements in increasing order.",
+      "constraints": "1 ≤ N ≤ 10^5",
+      "input_format": "N K\nA1 A2 ... AN",
+      "output_format": "Space-separated elements in increasing order",
+      "test_cases": [
+        {
+          "input": "8 2\n1 1 1 2 2 3 4 4",
+          "output": "1"
+        }
+      ]
+    },
+    {
+      "problem_id": 5,
+      "title": "Mirror Frequency Check",
+      "difficulty": 0.3,
+      "primary_skill": "Hash Map",
+      "skills": ["Frequency Counting", "Mathematical Mapping"],
+      "description": "An array is called mirror-balanced if frequency(x) = frequency(N − x) for every element x present in the array. Determine if the array is mirror-balanced.",
+      "constraints": "1 ≤ N ≤ 10^5",
+      "input_format": "N\nArray elements",
+      "output_format": "YES or NO",
+      "test_cases": [
+        {
+          "input": "5\n1 4 2 3 3",
+          "output": "YES"
+        }
+      ]
+    },
+    {
+      "problem_id": 6,
+      "title": "Longest Balanced 0-1 Subarray",
+      "difficulty": 0.5,
+      "primary_skill": "Prefix Sum + Hashing",
+      "skills": ["Hash Map", "Prefix Sum"],
+      "description": "You are given a binary array of size N. Find the length of the longest contiguous subarray where the number of 0s equals the number of 1s.",
+      "constraints": "1 ≤ N ≤ 2×10^5\nAi ∈ {0,1}",
+      "input_format": "N\nA1 A2 ... AN",
+      "output_format": "Single integer — maximum length",
+      "test_cases": [
+        {
+          "input": "7\n1 0 1 1 0 0 1",
+          "output": "6"
+        }
+      ]
+    },
+    {
+      "problem_id": 7,
+      "title": "Equal Frequency Split Index",
+      "difficulty": 0.5,
+      "primary_skill": "Hash Map",
+      "skills": ["Pre-computation", "Distinct Counting"],
+      "description": "Find the smallest index i such that the number of distinct elements in the left part A[0…i] is equal to the number of distinct elements in the right part A[i+1…N−1]. Return -1 if no such index exists.",
+      "constraints": "N ≤ 2×10^5",
+      "input_format": "N\nA1 A2 ... AN",
+      "output_format": "Smallest index i or -1",
+      "test_cases": [
+        {
+          "input": "6\n1 2 1 3 4 3",
+          "output": "2"
+        }
+      ]
+    },
+    {
+      "problem_id": 8,
+      "title": "Subarrays With Sum Divisible by K",
+      "difficulty": 0.6,
+      "primary_skill": "Prefix Sum + Modulo Hashing",
+      "skills": ["Mathematics", "Hash Map", "Combinatorics"],
+      "description": "Count the number of contiguous subarrays whose sum is divisible by K.",
+      "constraints": "N ≤ 2×10^5\nK ≤ 10^5",
+      "input_format": "N K\nA1 A2 ... AN",
+      "output_format": "Single integer",
+      "test_cases": [
+        {
+          "input": "5 3\n1 2 3 4 1",
+          "output": "4"
+        }
+      ]
+    },
+    {
+      "problem_id": 9,
+      "title": "Maximum Distance Between Equal Elements",
+      "difficulty": 0.4,
+      "primary_skill": "Hash Map",
+      "skills": ["Indexing", "Greedy"],
+      "description": "Find the maximum value of j − i such that Ai = Aj and i < j. If no duplicate elements exist, print 0.",
+      "constraints": "N ≤ 3×10^5",
+      "input_format": "N\nA1 A2 ... AN",
+      "output_format": "Single integer",
+      "test_cases": [
+        {
+          "input": "7\n1 2 3 1 4 2 1",
+          "output": "6"
+        }
+      ]
+    },
+    {
+      "problem_id": 10,
+      "title": "Frequency Based Sort",
+      "difficulty": 0.5,
+      "primary_skill": "Sorting with Custom Comparator",
+      "skills": ["Hash Map", "Sorting"],
+      "description": "Sort the array based on the following rules: 1) Higher frequency elements come first. 2) If frequencies are the same, the smaller number comes first.",
+      "constraints": "N ≤ 10^5",
+      "input_format": "N\nA1 A2 ... AN",
+      "output_format": "Space-separated sorted array",
+      "test_cases": [
+        {
+          "input": "6\n4 6 2 6 4 4",
+          "output": "4 4 4 6 6 2"
+        }
+      ]
+    },
+    {
+      "problem_id": 11,
+      "title": "Longest Subarray With Equal Frequencies",
+      "difficulty": 0.9,
+      "primary_skill": "Hash Map + State Bitmasking/Hashing",
+      "skills": ["Advanced Hashing", "Prefix Sum"],
+      "description": "Find the length of the longest contiguous subarray such that all distinct elements inside that subarray appear the same number of times.",
+      "constraints": "1 ≤ N ≤ 2×10^5\n1 ≤ Ai ≤ 10^9",
+      "input_format": "N\nA1 A2 ... AN",
+      "output_format": "Single integer",
+      "test_cases": [
+        {
+          "input": "7\n1 2 1 2 3 3 3",
+          "output": "6"
+        }
+      ]
+    },
+    {
+      "problem_id": 12,
+      "title": "Count Special Triplets",
+      "difficulty": 0.8,
+      "primary_skill": "Hash Map",
+      "skills": ["Optimization", "Two Sum Variant"],
+      "description": "Given an array A of size N, count the number of triplets (i,j,k) such that i < j < k and Ai + Aj = Ak.",
+      "constraints": "1 ≤ N ≤ 3000\n−10^5 ≤ Ai ≤ 10^5",
+      "input_format": "N\nA1 A2 ... AN",
+      "output_format": "Number of valid triplets",
+      "test_cases": [
+        {
+          "input": "5\n1 2 3 4 5",
+          "output": "4"
+        }
+      ]
+    },
+    {
+      "problem_id": 13,
+      "title": "Dynamic Distinct Counter",
+      "difficulty": 0.7,
+      "primary_skill": "Frequency Map Management",
+      "skills": ["Multiset", "Real-time Updates"],
+      "description": "Process Q queries on an initially empty multiset: 1 x: Insert x. 2 x: Delete one occurrence of x. 3: Print the count of elements that currently have a frequency ≥ 2.",
+      "constraints": "1 ≤ Q ≤ 3×10^5\n1 ≤ x ≤ 10^9",
+      "input_format": "Q\nQueries",
+      "output_format": "Results for each type-3 query",
+      "test_cases": [
+        {
+          "input": "7\n1 5\n1 5\n1 3\n3\n2 5\n3\n3",
+          "output": "1\n0\n0"
+        }
+      ]
+    },
+    {
+      "problem_id": 14,
+      "title": "Subarrays With Equal Odd–Even Counts",
+      "difficulty": 0.6,
+      "primary_skill": "Prefix Sum + Hashing",
+      "skills": ["Parity", "Array Traversal"],
+      "description": "Given an integer array A, count the number of subarrays where the count of even numbers equals the count of odd numbers.",
+      "constraints": "1 ≤ N ≤ 2×10^5",
+      "input_format": "N\nA1 A2 ... AN",
+      "output_format": "Single integer",
+      "test_cases": [
+        {
+          "input": "5\n2 3 4 5 6",
+          "output": "4"
+        }
+      ]
+    },
+    {
+      "problem_id": 15,
+      "title": "Maximum Frequency After Operations",
+      "difficulty": 0.85,
+      "primary_skill": "Sliding Window + Sorting",
+      "skills": ["Greedy", "Mathematics"],
+      "description": "You are given an array A of size N and an integer K. You may perform at most K operations, where one operation involves increasing any element by 1. Find the maximum frequency of any value achievable after at most K operations.",
+      "constraints": "1 ≤ N ≤ 2×10^5\n0 ≤ K ≤ 10^12\n1 ≤ Ai ≤ 10^9",
+      "input_format": "N K\nA1 A2 ... AN",
+      "output_format": "Maximum possible frequency",
+      "test_cases": [
+        {
+          "input": "5 5\n1 2 4 4 5",
+          "output": "4"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "problem_id": 1,
+      "title": "Recursive Digit Sum",
+      "difficulty": 0.2,
+      "primary_skill": "Recursion",
+      "skills": ["Recursion", "Digital Root", "Math"],
+      "description": "You are given a non-negative integer N. Define a recursive function: f(n) = n if n < 10, otherwise f(n) = f(sum_of_digits(n)). Your task is to compute and print the value of f(N).",
+      "constraints": "0 ≤ N ≤ 10^18",
+      "input_format": "Single integer N",
+      "output_format": "Single integer — result of f(N)",
+      "test_cases": [
+        {
+          "input": "9875",
+          "output": "2"
+        }
+      ]
+    },
+    {
+      "problem_id": 2,
+      "title": "Print Reverse Numbers",
+      "difficulty": 0.1,
+      "primary_skill": "Recursion",
+      "skills": ["Recursion", "Backtracking Basics"],
+      "description": "Given integer N, print numbers from N down to 1 using recursion only. Loops are not allowed.",
+      "constraints": "1 ≤ N ≤ 1000",
+      "input_format": "Single integer N",
+      "output_format": "Print space-separated integers.",
+      "test_cases": [
+        {
+          "input": "5",
+          "output": "5 4 3 2 1"
+        }
+      ]
+    },
+    {
+      "problem_id": 3,
+      "title": "Count Zeros in Number",
+      "difficulty": 0.2,
+      "primary_skill": "Recursion",
+      "skills": ["Recursion", "Digit Manipulation"],
+      "description": "Given integer N, count how many digits in it are equal to 0 using recursion.",
+      "constraints": "0 ≤ N ≤ 10^18",
+      "input_format": "Single integer N",
+      "output_format": "Single integer — count of zeros",
+      "test_cases": [
+        {
+          "input": "102030",
+          "output": "3"
+        }
+      ]
+    },
+    {
+      "problem_id": 4,
+      "title": "Recursive Array Sum",
+      "difficulty": 0.2,
+      "primary_skill": "Recursion",
+      "skills": ["Recursion", "Array Traversal"],
+      "description": "You are given an array of N integers. Compute the sum of all elements using recursion. Recursive Relation: sum(i) = A[i] + sum(i+1). Base case: i == N → return 0.",
+      "constraints": "1 ≤ N ≤ 10^5\n−10^9 ≤ Ai ≤ 10^9",
+      "input_format": "N\nA1 A2 ... AN",
+      "output_format": "Single integer — sum",
+      "test_cases": [
+        {
+          "input": "5\n1 2 3 4 5",
+          "output": "15"
+        }
+      ]
+    },
+    {
+      "problem_id": 5,
+      "title": "Palindrome String Check",
+      "difficulty": 0.2,
+      "primary_skill": "Recursion",
+      "skills": ["Recursion", "Two Pointers Strategy", "String Manipulation"],
+      "description": "Given a string S, determine whether it is a palindrome using recursion. A string is a palindrome if S == reverse(S). Print 'YES' or 'NO'.",
+      "constraints": "1 ≤ length(S) ≤ 10^5\nS contains only lowercase English letters",
+      "input_format": "String S",
+      "output_format": "YES or NO",
+      "test_cases": [
+        {
+          "input": "racecar",
+          "output": "YES"
+        }
+      ]
+    },
+    {
+      "problem_id": 6,
+      "title": "Generate All Binary Strings",
+      "difficulty": 0.5,
+      "primary_skill": "Backtracking",
+      "skills": ["Recursion", "Backtracking", "String Generation"],
+      "description": "Given integer N, generate all binary strings of length N. Print them in lexicographic order.",
+      "constraints": "1 ≤ N ≤ 15",
+      "input_format": "Single integer N",
+      "output_format": "Binary strings line by line",
+      "test_cases": [
+        {
+          "input": "2",
+          "output": "00\n01\n10\n11"
+        }
+      ]
+    },
+    {
+      "problem_id": 7,
+      "title": "Count Paths in Grid",
+      "difficulty": 0.5,
+      "primary_skill": "Recursion",
+      "skills": ["Recursion", "Combinatorics", "Grid Traversal"],
+      "description": "You are at cell (0,0) in a grid of size N × M. You may move only Right or Down. Count the number of distinct paths to reach (N−1,M−1) using recursion.",
+      "constraints": "1 ≤ N,M ≤ 15",
+      "input_format": "N M",
+      "output_format": "Single integer — total paths",
+      "test_cases": [
+        {
+          "input": "2 2",
+          "output": "2"
+        }
+      ]
+    },
+    {
+      "problem_id": 8,
+      "title": "Recursive Power Function",
+      "difficulty": 0.4,
+      "primary_skill": "Recursion",
+      "skills": ["Logarithmic Time", "Binary Exponentiation"],
+      "description": "Compute X^N using recursion with logarithmic depth. Use the logic: if n is even, $(x^{n/2})^2$; if n is odd, $x * (x^{n/2})^2$.",
+      "constraints": "−10^9 ≤ X ≤ 10^9\n0 ≤ N ≤ 10^9",
+      "input_format": "X N",
+      "output_format": "Result of X^N",
+      "test_cases": [
+        {
+          "input": "2 10",
+          "output": "1024"
+        }
+      ]
+    },
+    {
+      "problem_id": 9,
+      "title": "Subset Sum Exists",
+      "difficulty": 0.6,
+      "primary_skill": "Recursion / Backtracking",
+      "skills": ["Recursion", "Pick/Non-pick Pattern", "Brute Force Search"],
+      "description": "Given an array and an integer K, determine if any subset of the array sums exactly to K. Print YES or NO.",
+      "constraints": "N ≤ 25",
+      "input_format": "N K\nArray elements",
+      "output_format": "YES or NO",
+      "test_cases": [
+        {
+          "input": "4 9\n3 2 7 1",
+          "output": "YES"
+        }
+      ]
+    },
+    {
+      "problem_id": 10,
+      "title": "Recursive String Permutations",
+      "difficulty": 0.6,
+      "primary_skill": "Backtracking",
+      "skills": ["Recursion", "Backtracking", "Lexicographic Order"],
+      "description": "Print all permutations of a string with distinct characters using recursion.",
+      "constraints": "1 ≤ length ≤ 9",
+      "input_format": "String S",
+      "output_format": "All permutations line by line",
+      "test_cases": [
+        {
+          "input": "abc",
+          "output": "abc\nacb\nbac\nbca\ncab\ncba"
+        }
+      ]
+    },
+    {
+      "problem_id": 11,
+      "title": "K-th Symbol in Recursive Grammar",
+      "difficulty": 0.8,
+      "primary_skill": "Recursion",
+      "skills": ["Pattern Recognition", "Logarithmic Search"],
+      "description": "A grammar sequence is defined: Row 1 is '0'. Row i replaces each 0 with '01' and each 1 with '10' from row i-1. Given N and K, return the Kth symbol in row N (1-indexed).",
+      "constraints": "1 ≤ N ≤ 60\n1 ≤ K ≤ 2^(N−1)",
+      "input_format": "N K",
+      "output_format": "Single integer (0 or 1)",
+      "test_cases": [
+        {
+          "input": "4 5",
+          "output": "1"
+        }
+      ]
+    },
+    {
+      "problem_id": 12,
+      "title": "Recursive Expression Evaluator",
+      "difficulty": 0.9,
+      "primary_skill": "Parsing",
+      "skills": ["Recursive Descent Parsing", "Mathematical Expression Evaluation"],
+      "description": "Evaluate a mathematical expression containing digits (0–9), +, −, *, /, and parentheses (). No spaces, division is integer division.",
+      "constraints": "1 ≤ length ≤ 10^5",
+      "input_format": "Expression string",
+      "output_format": "Integer result",
+      "test_cases": [
+        {
+          "input": "(2+(3*4))-5",
+          "output": "9"
+        }
+      ]
+    },
+    {
+      "problem_id": 13,
+      "title": "Count Valid Parentheses Strings",
+      "difficulty": 0.8,
+      "primary_skill": "Recursion / Combinatorics",
+      "skills": ["Catalan Numbers", "Backtracking"],
+      "description": "Given integer N, count how many valid parentheses strings of length 2N can be formed. A string is valid if every opening bracket has a matching closing bracket and closing brackets never exceed opening brackets.",
+      "constraints": "1 ≤ N ≤ 20",
+      "input_format": "N",
+      "output_format": "Number of valid strings",
+      "test_cases": [
+        {
+          "input": "3",
+          "output": "5"
+        }
+      ]
+    },
+    {
+      "problem_id": 14,
+      "title": "Minimum Operations to Reduce to 1",
+      "difficulty": 0.7,
+      "primary_skill": "Recursion with Memoization",
+      "skills": ["Dynamic Programming", "Memoization", "Optimization"],
+      "description": "Given integer N, reduce it to 1 in minimum steps. Operations: divide by 3 (if divisible), divide by 2 (if divisible), or subtract 1.",
+      "constraints": "1 ≤ N ≤ 10^7",
+      "input_format": "Single integer N",
+      "output_format": "Minimum steps",
+      "test_cases": [
+        {
+          "input": "10",
+          "output": "3"
+        }
+      ]
+    },
+    {
+      "problem_id": 15,
+      "title": "Maximum Score Path in Recursive Grid",
+      "difficulty": 0.8,
+      "primary_skill": "Recursion",
+      "skills": ["Grid Optimization", "Recursive Relationship"],
+      "description": "In an N × N grid starting from (0,0), reach (N−1,N−1). You may move Right, Down, or Diagonal. Find the maximum score path sum using recursion.",
+      "constraints": "1 ≤ N ≤ 15\n−10^4 ≤ grid[i][j] ≤ 10^4",
+      "input_format": "N\nGrid values",
+      "output_format": "Maximum sum",
+      "test_cases": [
+        {
+          "input": "2\n1 2\n3 4",
+          "output": "8"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "problem_id": 1,
+      "title": "Valid Stack Sequence",
+      "difficulty": 0.3,
+      "primary_skill": "Stack Simulation",
+      "skills": ["Stack", "Simulation", "Array"],
+      "description": "You are given two integer sequences: Push sequence P and Pop sequence Q. Determine whether Q could be a valid pop order of a stack if elements are pushed in the order given by P. You must simulate the stack behavior exactly.",
+      "constraints": "1 ≤ N ≤ 10^5\nAll values distinct",
+      "input_format": "N\nP1 P2 ... PN\nQ1 Q2 ... QN",
+      "output_format": "YES or NO",
+      "test_cases": [
+        {
+          "input": "5\n1 2 3 4 5\n4 5 3 2 1",
+          "output": "YES"
+        }
+      ]
+    },
+    {
+      "problem_id": 2,
+      "title": "Queue After Operations",
+      "difficulty": 0.2,
+      "primary_skill": "Queue Implementation",
+      "skills": ["Queue", "Data Structure Operations"],
+      "description": "Process Q operations on a queue: ENQ X (enqueue), DEQ (dequeue), and FRONT (get front). Handle 'EMPTY' cases for invalid operations.",
+      "constraints": "1 ≤ Q ≤ 2×10^5\n1 ≤ X ≤ 10^9",
+      "input_format": "Q\noperation1\noperation2\n...",
+      "output_format": "Result of each FRONT query or 'EMPTY'.",
+      "test_cases": [
+        {
+          "input": "5\nENQ 5\nENQ 2\nFRONT\nDEQ\nFRONT",
+          "output": "5\n2"
+        }
+      ]
+    },
+    {
+      "problem_id": 3,
+      "title": "Next Greater Element",
+      "difficulty": 0.4,
+      "primary_skill": "Monotonic Stack",
+      "skills": ["Stack", "Monotonic Stack", "Array Traversal"],
+      "description": "For each element in array A, find the nearest element to its right that is strictly greater. If none exists, print -1. This should be solved in O(N) using a stack.",
+      "constraints": "1 ≤ N ≤ 2×10^5\n−10^9 ≤ Ai ≤ 10^9",
+      "input_format": "N\nA1 A2 ... AN",
+      "output_format": "N space separated integers",
+      "test_cases": [
+        {
+          "input": "5\n4 5 2 10 8",
+          "output": "5 10 10 -1 -1"
+        }
+      ]
+    },
+    {
+      "problem_id": 4,
+      "title": "Balanced Brackets Check",
+      "difficulty": 0.3,
+      "primary_skill": "Stack",
+      "skills": ["Stack", "String Parsing"],
+      "description": "Given a string S containing characters '(', ')', '{', '}', '[', and ']', determine if the brackets are balanced. Every opening bracket must have a matching closing bracket of the same type in the correct order.",
+      "constraints": "1 ≤ |S| ≤ 2×10^5",
+      "input_format": "String S",
+      "output_format": "YES or NO",
+      "test_cases": [
+        {
+          "input": "{[()()]}",
+          "output": "YES"
+        }
+      ]
+    },
+    {
+      "problem_id": 5,
+      "title": "Stack Minimum Query",
+      "difficulty": 0.4,
+      "primary_skill": "Stack with Min Tracking",
+      "skills": ["Stack", "Optimization"],
+      "description": "Design a stack that supports push, pop, and retrieving the minimum element in constant time. Handle 'EMPTY' for operations on an empty stack.",
+      "constraints": "1 ≤ Q ≤ 2×10^5\n1 ≤ X ≤ 10^9",
+      "input_format": "Q\nqueries...",
+      "output_format": "Result of each type 3 (minimum) query.",
+      "test_cases": [
+        {
+          "input": "6\n1 5\n1 3\n3\n2\n3\n2",
+          "output": "3\n5"
+        }
+      ]
+    },
+    {
+      "problem_id": 6,
+      "title": "Nearest Smaller Element to Left",
+      "difficulty": 0.5,
+      "primary_skill": "Monotonic Stack",
+      "skills": ["Stack", "Monotonic Stack", "Preprocessing"],
+      "description": "For each element in an array, find the nearest element to its left that is strictly smaller. If no such element exists, print -1.",
+      "constraints": "1 ≤ N ≤ 2×10^5\n−10^9 ≤ Ai ≤ 10^9",
+      "input_format": "N\nA1 A2 ... AN",
+      "output_format": "N space separated integers",
+      "test_cases": [
+        {
+          "input": "6\n4 10 5 8 20 15",
+          "output": "-1 4 4 5 8 8"
+        }
+      ]
+    },
+    {
+      "problem_id": 7,
+      "title": "Circular Next Greater Element",
+      "difficulty": 0.6,
+      "primary_skill": "Monotonic Stack",
+      "skills": ["Stack", "Circular Array Manipulation"],
+      "description": "Find the next greater element for each element in a circular array. If the next greater doesn't exist to the right, wrap around to the beginning.",
+      "constraints": "1 ≤ N ≤ 2×10^5",
+      "input_format": "N\nA1 A2 ... AN",
+      "output_format": "N integers",
+      "test_cases": [
+        {
+          "input": "4\n2 5 3 1",
+          "output": "5 -1 5 2"
+        }
+      ]
+    },
+    {
+      "problem_id": 8,
+      "title": "Queue Using Two Stacks",
+      "difficulty": 0.5,
+      "primary_skill": "Stack to Queue Conversion",
+      "skills": ["Stack", "Queue", "Amortized Analysis"],
+      "description": "Implement a FIFO queue using only two LIFO stacks. Support enqueue, dequeue, and front operations.",
+      "constraints": "1 ≤ Q ≤ 2×10^5",
+      "input_format": "Q\nqueries...",
+      "output_format": "Print result for type 3 queries.",
+      "test_cases": [
+        {
+          "input": "7\n1 10\n1 20\n3\n2\n3\n2\n3",
+          "output": "10\n20\nEMPTY"
+        }
+      ]
+    },
+    {
+      "problem_id": 9,
+      "title": "Longest Valid Parentheses Length",
+      "difficulty": 0.7,
+      "primary_skill": "Stack / Dynamic Programming",
+      "skills": ["Stack", "String Manipulation", "Subarray Tracking"],
+      "description": "Given a string of '(' and ')', find the length of the longest contiguous valid (well-formed) parentheses substring.",
+      "constraints": "1 ≤ |S| ≤ 2×10^5",
+      "input_format": "String S",
+      "output_format": "Single integer",
+      "test_cases": [
+        {
+          "input": ")()())",
+          "output": "4"
+        }
+      ]
+    },
+    {
+      "problem_id": 10,
+      "title": "Stack Permutation Count Check",
+      "difficulty": 0.5,
+      "primary_skill": "Stack Simulation",
+      "skills": ["Stack", "Permutation"],
+      "description": "Determine if a target permutation P can be generated by pushing numbers 1 to N into a stack and popping them at appropriate times.",
+      "constraints": "1 ≤ N ≤ 2×10^5",
+      "input_format": "N\nP1 P2 ... PN",
+      "output_format": "YES or NO",
+      "test_cases": [
+        {
+          "input": "5\n2 1 5 4 3",
+          "output": "YES"
+        }
+      ]
+    },
+    {
+      "problem_id": 1,
+      "title": "Maximum of Minimums for Every Window Size",
+      "difficulty": 0.9,
+      "primary_skill": "Monotonic Stack",
+      "skills": ["Stack", "Range Queries", "Array Optimization"],
+      "description": "For every window size k (1 to N), find the maximum value among the minimum values of all subarrays of size k. Use monotonic stacks to find the 'span' of each element as a minimum.",
+      "constraints": "1 ≤ N ≤ 2×10^5",
+      "input_format": "N\nA1 A2 ... AN",
+      "output_format": "N integers",
+      "test_cases": [
+        {
+          "input": "5\n10 20 30 50 10",
+          "output": "50 30 20 10 10"
+        }
+      ]
+    },
+    {
+      "problem_id": 12,
+      "title": "Sum of Subarray Minimums",
+      "difficulty": 0.8,
+      "primary_skill": "Monotonic Stack",
+      "skills": ["Stack", "Combinatorics", "Math"],
+      "description": "Calculate the sum of the minimum values of all possible subarrays of A. Return result modulo 10^9+7. The contribution of each A[i] is Ai * (left_span * right_span).",
+      "constraints": "1 ≤ N ≤ 2×10^5",
+      "input_format": "N\nA1 A2 ... AN",
+      "output_format": "Single integer mod 10^9+7",
+      "test_cases": [
+        {
+          "input": "3\n3 1 2",
+          "output": "9"
+        }
+      ]
+    },
+    {
+      "problem_id": 13,
+      "title": "Maximum Rectangle in Histogram",
+      "difficulty": 0.8,
+      "primary_skill": "Monotonic Stack",
+      "skills": ["Stack", "Geometry", "Optimization"],
+      "description": "Given an array representing heights of bars in a histogram, find the area of the largest rectangle that can be formed within the histogram.",
+      "constraints": "1 ≤ N ≤ 2×10^5\n1 ≤ Hi ≤ 10^9",
+      "input_format": "N\nH1 H2 ... HN",
+      "output_format": "Maximum area",
+      "test_cases": [
+        {
+          "input": "6\n2 1 5 6 2 3",
+          "output": "10"
+        }
+      ]
+    },
+    {
+      "problem_id": 14,
+      "title": "Sliding Window Maximum",
+      "difficulty": 0.7,
+      "primary_skill": "Monotonic Deque",
+      "skills": ["Deque", "Sliding Window", "Optimization"],
+      "description": "Given array A and window size K, find the maximum element for every sliding window of size K as it moves from left to right.",
+      "constraints": "1 ≤ N ≤ 2×10^5",
+      "input_format": "N K\nA1 A2 ... AN",
+      "output_format": "N-K+1 numbers",
+      "test_cases": [
+        {
+          "input": "8 3\n1 3 -1 -3 5 3 6 7",
+          "output": "3 3 5 5 6 7"
+        }
+      ]
+    },
+    {
+      "problem_id": 15,
+      "title": "Remove K Digits to Form Smallest Number",
+      "difficulty": 0.8,
+      "primary_skill": "Monotonic Stack / Greedy",
+      "skills": ["Stack", "Greedy", "String Manipulation"],
+      "description": "Given a numeric string S, remove exactly K digits to make the resulting number as small as possible. The order of remaining digits cannot be changed.",
+      "constraints": "1 ≤ length(S) ≤ 2×10^5\n0 ≤ K < length(S)",
+      "input_format": "String S\nK",
+      "output_format": "Smallest possible string",
+      "test_cases": [
+        {
+          "input": "1432219\n3",
+          "output": "1219"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "problem_id": 1,
+      "title": "Maximum Sum Subarray of Size K",
+      "difficulty": 0.2,
+      "primary_skill": "Fixed Sliding Window",
+      "skills": ["Sliding Window", "Array Sum Optimization"],
+      "description": "You are given an integer array A of size N and an integer K. Find the maximum sum of any contiguous subarray of length exactly K. Use the sliding window technique to avoid recalculating the sum from scratch for each window.",
+      "constraints": "1 ≤ N ≤ 2×10^5\n1 ≤ K ≤ N\n−10^9 ≤ Ai ≤ 10^9",
+      "input_format": "N K\nA1 A2 ... AN",
+      "output_format": "Single integer — maximum sum",
+      "test_cases": [
+        {
+          "input": "6 3\n2 1 5 1 3 2",
+          "output": "9"
+        }
+      ]
+    },
+    {
+      "problem_id": 2,
+      "title": "First Negative Number in Every Window",
+      "difficulty": 0.3,
+      "primary_skill": "Fixed Sliding Window",
+      "skills": ["Queue", "Sliding Window"],
+      "description": "Given array A and window size K, print the first negative number encountered in every window of size K. If a window contains no negative number, print 0.",
+      "constraints": "1 ≤ N ≤ 2×10^5\n1 ≤ K ≤ N",
+      "input_format": "N K\narray elements",
+      "output_format": "N−K+1 integers",
+      "test_cases": [
+        {
+          "input": "5 2\n1 -2 3 -4 5",
+          "output": "-2 -2 -4 -4"
+        }
+      ]
+    },
+    {
+      "problem_id": 3,
+      "title": "Count Windows With Sum ≤ X",
+      "difficulty": 0.3,
+      "primary_skill": "Fixed Sliding Window",
+      "skills": ["Sliding Window", "Comparison"],
+      "description": "Given array A, window size K, and integer X, count how many subarrays of length exactly K have a sum less than or equal to X.",
+      "constraints": "1 ≤ N ≤ 2×10^5\n1 ≤ K ≤ N",
+      "input_format": "N K X\nA1 A2 ... AN",
+      "output_format": "Single integer",
+      "test_cases": [
+        {
+          "input": "5 3 6\n1 2 3 4 1",
+          "output": "1"
+        }
+      ]
+    },
+    {
+      "problem_id": 4,
+      "title": "Minimum in Every Window",
+      "difficulty": 0.4,
+      "primary_skill": "Sliding Window / Monotonic Deque",
+      "skills": ["Deque", "Sliding Window", "Optimization"],
+      "description": "Given array A and window size K, print the minimum element of each sliding window of size K.",
+      "constraints": "1 ≤ N ≤ 10^5\n1 ≤ K ≤ N",
+      "input_format": "N K\narray",
+      "output_format": "N−K+1 integers",
+      "test_cases": [
+        {
+          "input": "7 3\n4 2 12 3 5 1 2",
+          "output": "2 2 3 1 1"
+        }
+      ]
+    },
+    {
+      "problem_id": 5,
+      "title": "Longest Subarray With Sum ≤ K",
+      "difficulty": 0.4,
+      "primary_skill": "Dynamic Sliding Window",
+      "skills": ["Two Pointers", "Variable Window"],
+      "description": "Given array A and integer K, find the length of the longest contiguous subarray whose sum is less than or equal to K.",
+      "constraints": "1 ≤ N ≤ 2×10^5\n−10^4 ≤ Ai ≤ 10^4",
+      "input_format": "N K\narray",
+      "output_format": "Single integer",
+      "test_cases": [
+        {
+          "input": "5 7\n2 1 5 1 3",
+          "output": "3"
+        }
+      ]
+    },
+    {
+      "problem_id": 6,
+      "title": "Maximum Stable Segment",
+      "difficulty": 0.6,
+      "primary_skill": "Dynamic Sliding Window",
+      "skills": ["Two Pointers", "Monotonic Deque"],
+      "description": "A segment is stable if the difference between the maximum and minimum elements in that segment is ≤ K. Find the length of the longest such contiguous subarray.",
+      "constraints": "1 ≤ N ≤ 2×10^5\n0 ≤ Ai, K ≤ 10^9",
+      "input_format": "N K\nA1 A2 ... AN",
+      "output_format": "Single integer",
+      "test_cases": [
+        {
+          "input": "8 3\n1 3 6 7 9 10 6 5",
+          "output": "3"
+        }
+      ]
+    },
+    {
+      "problem_id": 7,
+      "title": "Minimum Window with Exact Sum",
+      "difficulty": 0.5,
+      "primary_skill": "Dynamic Sliding Window",
+      "skills": ["Two Pointers", "Positive Integers"],
+      "description": "Find the minimum length of a contiguous subarray whose sum equals exactly S. If no such subarray exists, print -1.",
+      "constraints": "1 ≤ N ≤ 10^5\n1 ≤ Ai ≤ 10^4\n1 ≤ S ≤ 10^9",
+      "input_format": "N S\narray elements",
+      "output_format": "minimum length or -1",
+      "test_cases": [
+        {
+          "input": "7 15\n2 3 5 1 9 7 4",
+          "output": "3"
+        }
+      ]
+    },
+    {
+      "problem_id": 8,
+      "title": "Longest Substring with Limited Distinct Characters",
+      "difficulty": 0.5,
+      "primary_skill": "Dynamic Sliding Window",
+      "skills": ["Hash Map", "String Manipulation"],
+      "description": "Find the length of the longest substring that contains at most K distinct characters.",
+      "constraints": "1 ≤ |S| ≤ 2×10^5\n1 ≤ K ≤ 26",
+      "input_format": "S\nK",
+      "output_format": "integer length",
+      "test_cases": [
+        {
+          "input": "aabacbebebe\n3",
+          "output": "7"
+        }
+      ]
+    },
+    {
+      "problem_id": 9,
+      "title": "Subarrays with Product Less Than K",
+      "difficulty": 0.5,
+      "primary_skill": "Dynamic Sliding Window",
+      "skills": ["Two Pointers", "Combinatorics"],
+      "description": "Count the number of contiguous subarrays whose product is strictly less than K.",
+      "constraints": "1 ≤ N ≤ 10^5\n1 ≤ Ai ≤ 10^3\n1 ≤ K ≤ 10^9",
+      "input_format": "N K\narray",
+      "output_format": "count",
+      "test_cases": [
+        {
+          "input": "4 10\n1 2 3 4",
+          "output": "7"
+        }
+      ]
+    },
+    {
+      "problem_id": 10,
+      "title": "Longest Binary Segment After Flips",
+      "difficulty": 0.6,
+      "primary_skill": "Dynamic Sliding Window",
+      "skills": ["Two Pointers", "Binary Array"],
+      "description": "In a binary array, you can flip at most K zeros to ones. Find the maximum length of a contiguous segment consisting only of ones after performing the flips.",
+      "constraints": "1 ≤ N ≤ 2×10^5\n0 ≤ K ≤ N",
+      "input_format": "N K\narray",
+      "output_format": "max length",
+      "test_cases": [
+        {
+          "input": "10 2\n1 0 0 1 1 0 1 1 0 1",
+          "output": "6"
+        }
+      ]
+    },
+    {
+      "problem_id": 11,
+      "title": "Smallest Window With Exactly K Distinct Numbers",
+      "difficulty": 0.7,
+      "primary_skill": "Dynamic Sliding Window",
+      "skills": ["Hash Map", "Two Pointers"],
+      "description": "Find the length of the smallest contiguous subarray that contains exactly K distinct integers. Print -1 if no such subarray exists.",
+      "constraints": "1 ≤ N ≤ 2×10^5\n1 ≤ Ai ≤ 10^9\n1 ≤ K ≤ N",
+      "input_format": "N K\nA1 A2 ... AN",
+      "output_format": "Single integer",
+      "test_cases": [
+        {
+          "input": "7 3\n1 2 1 3 4 2 3",
+          "output": "3"
+        }
+      ]
+    },
+    {
+      "problem_id": 12,
+      "title": "Maximum Frequency After K Replacements",
+      "difficulty": 0.8,
+      "primary_skill": "Dynamic Sliding Window",
+      "skills": ["Two Pointers", "Optimization"],
+      "description": "Given an array and an integer K, find the maximum possible length of a subarray such that all elements can be made equal by replacing at most K elements.",
+      "constraints": "1 ≤ N ≤ 2×10^5\n1 ≤ Ai ≤ 10^5\n0 ≤ K ≤ N",
+      "input_format": "N K\narray",
+      "output_format": "Single integer",
+      "test_cases": [
+        {
+          "input": "6 2\n1 1 3 3 3 2",
+          "output": "5"
+        }
+      ]
+    },
+    {
+      "problem_id": 13,
+      "title": "Count Subarrays With Sum in Range",
+      "difficulty": 0.9,
+      "primary_skill": "Prefix Sum + Sliding Window / Binary Search",
+      "skills": ["Prefix Sum", "Subarray Counting", "Math"],
+      "description": "Count the number of contiguous subarrays whose sum lies between L and R inclusive. For arrays with only positive numbers, use sliding window; for negative numbers, use prefix sums with a balanced BST or Fenwick Tree.",
+      "constraints": "1 ≤ N ≤ 2×10^5\n−10^9 ≤ Ai ≤ 10^9",
+      "input_format": "N L R\narray",
+      "output_format": "Count of valid subarrays",
+      "test_cases": [
+        {
+          "input": "4 3 6\n1 2 3 1",
+          "output": "5"
+        }
+      ]
+    },
+    {
+      "problem_id": 14,
+      "title": "Longest Subarray With Limited Distinct Difference",
+      "difficulty": 0.8,
+      "primary_skill": "Dynamic Sliding Window",
+      "skills": ["Monotonic Deque", "Range Max/Min"],
+      "description": "Find the longest subarray where the difference between the maximum and minimum elements is at most K.",
+      "constraints": "1 ≤ N ≤ 2×10^5",
+      "input_format": "N K\narray",
+      "output_format": "Maximum length",
+      "test_cases": [
+        {
+          "input": "7 3\n1 3 6 7 9 4 10",
+          "output": "3"
+        }
+      ]
+    },
+    {
+      "problem_id": 15,
+      "title": "Minimum Window Covering All Required Values",
+      "difficulty": 0.7,
+      "primary_skill": "Dynamic Sliding Window",
+      "skills": ["Hash Map", "Set"],
+      "description": "Find the length of the smallest subarray of A that contains every value from list B at least once. Print -1 if impossible.",
+      "constraints": "1 ≤ N ≤ 2×10^5\n1 ≤ M ≤ 10^5",
+      "input_format": "N M\nA1 A2 ... AN\nB1 B2 ... BM",
+      "output_format": "Single integer",
+      "test_cases": [
+        {
+          "input": "7 3\n1 2 3 2 1 4 3\n2 3 4",
+          "output": "3"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "problem_id": 1,
+      "title": "Climbing Stairs With Cost",
+      "difficulty": 0.2,
+      "primary_skill": "Dynamic Programming",
+      "skills": ["Linear DP", "Optimization"],
+      "description": "You are given an integer N. You are standing at step 0 and want to reach step N. You may climb: 1 step or 2 steps. Each step i has a cost Ci. You must pay the cost of every step you land on. Find the minimum total cost to reach step N.\n\nInput Format:\nThe first line contains an integer N.\nThe second line contains N+1 space-separated integers C0, C1, ..., CN.\n\nOutput Format:\nSingle integer — minimum cost.\n\nExplanation:\nFor Sample Input (4, costs: 1 100 1 1 1):\nBest path: step 0 → step 2 → step 4\nCost = 1 + 1 + 1 = 3.",
+      "constraints": "1 ≤ N ≤ 10⁵\n0 ≤ Ci ≤ 10⁴",
+      "test_cases": [
+        {
+          "input": "4\n1 100 1 1 1",
+          "output": "3"
+        }
+      ]
+    },
+    {
+      "problem_id": 2,
+      "title": "Maximum Sum of Non-Adjacent Elements",
+      "difficulty": 0.3,
+      "primary_skill": "Dynamic Programming",
+      "skills": ["Linear DP", "Optimization"],
+      "description": "Given an array A of size N, find maximum sum of elements such that no two chosen elements are adjacent.\n\nInput Format:\nThe first line contains integer N.\nThe second line contains N space-separated integers A1, A2, ..., AN.\n\nOutput Format:\nMaximum sum.\n\nExplanation:\nFor Sample Input (5, elements: 3 2 7 10 12):\nChoose elements at indices 0, 2, and 4: 3 + 7 + 12 = 22.",
+      "constraints": "1 ≤ N ≤ 2×10⁵\n−10⁹ ≤ Ai ≤ 10⁹",
+      "test_cases": [
+        {
+          "input": "5\n3 2 7 10 12",
+          "output": "22"
+        }
+      ]
+    },
+    {
+      "problem_id": 3,
+      "title": "Count Ways to Reach N",
+      "difficulty": 0.3,
+      "primary_skill": "Dynamic Programming",
+      "skills": ["Combinatorics", "Linear DP"],
+      "description": "You start at position 0 and want to reach N. Allowed moves: +1 step, +3 steps, +5 steps. Count number of distinct ways to reach exactly N.\n\nInput Format:\nSingle integer N.\n\nOutput Format:\nNumber of ways.\n\nExplanation:\nFor N=5, ways are:\n1+1+1+1+1\n1+1+3\n3+1+1\n1+3+1\n5\nTotal = 5.",
+      "constraints": "0 ≤ N ≤ 10⁵",
+      "test_cases": [
+        {
+          "input": "5",
+          "output": "5"
+        }
+      ]
+    },
+    {
+      "problem_id": 4,
+      "title": "Longest Increasing Prefix Length",
+      "difficulty": 0.2,
+      "primary_skill": "Dynamic Programming",
+      "skills": ["Array Processing", "Linear DP"],
+      "description": "Given array A, find length of longest prefix such that elements are strictly increasing. You must compute this using dynamic programming.\n\nInput Format:\nThe first line contains integer N.\nThe second line contains N space-separated integers.\n\nOutput Format:\nLength.\n\nExplanation:\nPrefix increasing sequence for [1, 2, 3, 2, 4, 5, 6] is 1, 2, 3. The length is 3. It stops when 2 appears because 2 is not greater than 3.",
+      "constraints": "1 ≤ N ≤ 2×10⁵",
+      "test_cases": [
+        {
+          "input": "7\n1 2 3 2 4 5 6",
+          "output": "3"
+        }
+      ]
+    },
+    {
+      "problem_id": 5,
+      "title": "Minimum Operations to Make Array Zero",
+      "difficulty": 0.2,
+      "primary_skill": "Greedy",
+      "skills": ["Math", "Optimization"],
+      "description": "You are given an array A of size N. In one operation you may choose any element and: subtract 1 or subtract 2. Find minimum operations required to make all elements equal to 0.\n\nInput Format:\nThe first line contains integer N.\nThe second line contains N space-separated integers.\n\nOutput Format:\nMinimum operations.\n\nExplanation:\nFor array [1, 2, 3]:\n1 takes 1 step (subtract 1).\n2 takes 1 step (subtract 2).\n3 takes 2 steps (subtract 2, then subtract 1).\nTotal = 4 steps.",
+      "constraints": "1 ≤ N ≤ 2×10⁵\n0 ≤ Ai ≤ 10⁶",
+      "test_cases": [
+        {
+          "input": "3\n1 2 3",
+          "output": "4"
+        }
+      ]
+    },
+    {
+      "problem_id": 6,
+      "title": "Weighted Alternating Subsequence",
+      "difficulty": 0.5,
+      "primary_skill": "Dynamic Programming",
+      "skills": ["Subsequence DP", "Optimization"],
+      "description": "You are given an array A of size N. You must choose a subsequence such that: Elements alternate increase → decrease → increase → … and the first comparison must be an increase. Score of subsequence = sum of its elements. Find the maximum score possible.\n\nInput Format:\nThe first line contains integer N.\nThe second line contains N space-separated integers.\n\nOutput Format:\nMaximum score.\n\nExplanation:\nFor [4, 7, 2, 9, 1, 5], the subsequence 4 → 7 → 2 → 9 → 1 → 5 alternates correctly and yields a sum of 20.",
+      "constraints": "1 ≤ N ≤ 2000\n−10⁵ ≤ Ai ≤ 10⁵",
+      "test_cases": [
+        {
+          "input": "6\n4 7 2 9 1 5",
+          "output": "20"
+        }
+      ]
+    },
+    {
+      "problem_id": 7,
+      "title": "Minimum Cost Partition with Penalty",
+      "difficulty": 0.6,
+      "primary_skill": "Dynamic Programming",
+      "skills": ["Partition DP", "Optimization"],
+      "description": "Given array A and integer K, split the array into exactly K contiguous groups. Cost of a group: (max_element - min_element)². Minimize total cost.\n\nInput Format:\nThe first line contains N and K.\nThe second line contains N integers.\n\nOutput Format:\nMinimum cost.\n\nExplanation:\nFor [1, 5, 2, 8, 3] and K=2, the optimal split is [1, 5, 2] and [8, 3].\nGroup 1 cost: (5-1)² = 16. Group 2 cost: (8-3)² = 25. Note: The sample logic implies searching for the absolute minimum over all possible split points.",
+      "constraints": "1 ≤ N ≤ 500\n1 ≤ K ≤ N\n0 ≤ Ai ≤ 10⁶",
+      "test_cases": [
+        {
+          "input": "5 2\n1 5 2 8 3",
+          "output": "17"
+        }
+      ]
+    },
+    {
+      "problem_id": 8,
+      "title": "Count Valid Binary Strings with Blocks",
+      "difficulty": 0.5,
+      "primary_skill": "Dynamic Programming",
+      "skills": ["Combinatorics", "String DP"],
+      "description": "Given integers N and M, count binary strings of length N such that: No more than M consecutive 1s appear. Return answer modulo 10⁹+7.\n\nInput Format:\nTwo integers N and M.\n\nOutput Format:\nCount of valid strings.\n\nExplanation:\nFor N=4, M=2, invalid strings are 1110, 0111, 1111. Total strings = 2⁴ = 16. Valid = 16 - 3 = 13.",
+      "constraints": "1 ≤ N ≤ 10⁵\n1 ≤ M ≤ N",
+      "test_cases": [
+        {
+          "input": "4 2",
+          "output": "13"
+        }
+      ]
+    },
+    {
+      "problem_id": 9,
+      "title": "Maximum Profit with Cooldown and Fee",
+      "difficulty": 0.6,
+      "primary_skill": "Dynamic Programming",
+      "skills": ["State Machine DP", "Optimization"],
+      "description": "You are given stock prices for N days and an integer F (transaction fee). You may buy and sell multiple times, but after selling, you must wait 1 day (cooldown). Every sell costs fee F. Maximize profit.\n\nInput Format:\nThe first line contains N and F.\nThe second line contains N prices.\n\nOutput Format:\nMaximum profit.\n\nConstraints:\n1 ≤ N ≤ 2×10⁵\n1 ≤ price ≤ 10⁹\n0 ≤ F ≤ 10⁹",
+      "test_cases": [
+        {
+          "input": "6 2\n1 3 2 8 4 9",
+          "output": "8"
+        }
+      ]
+    },
+    {
+      "problem_id": 10,
+      "title": "Longest Path with Limited Turns",
+      "difficulty": 0.6,
+      "primary_skill": "Dynamic Programming",
+      "skills": ["Grid DP", "Optimization"],
+      "description": "You are given a grid N × M with integers. You start at (0,0) and must reach (N−1,M−1). Allowed moves: Right, Down. Constraint: You can change direction at most K times. Maximize sum of visited cells.\n\nInput Format:\nFirst line: N M K.\nFollowing N lines: grid values.\n\nOutput Format:\nMaximum sum.\n\nExplanation:\nPath: 1 → 4 → 7 → 8 → 9 uses only one turn (at cell 4). Sum = 29.",
+      "constraints": "1 ≤ N,M ≤ 200\n0 ≤ K ≤ N+M\n−10⁵ ≤ grid[i][j] ≤ 10⁵",
+      "test_cases": [
+        {
+          "input": "3 3 1\n1 2 3\n4 5 6\n7 8 9",
+          "output": "29"
+        }
+      ]
+    },
+    {
+      "problem_id": 11,
+      "title": "Weighted Increasing Subsequence with Gap Cost",
+      "difficulty": 0.8,
+      "primary_skill": "Dynamic Programming",
+      "skills": ["LIS", "Optimization"],
+      "description": "You are given an array A of size N and an array W of weights. You must choose a strictly increasing subsequence of indices. Score formula: (sum of weights Wi) - (sum of absolute differences between consecutive indices |idx_j - idx_i|). Find the maximum possible score.\n\nInput Format:\nThe first line contains N.\nThe second line contains A1...AN.\nThe third line contains W1...WN.\n\nOutput Format:\nMaximum score.\n\nExplanation:\nOptimal subsequence indices [1, 4, 5]. Weights: 5 + 3 + 6 = 14. Penalty: |4-1| + |5-4| = 3 + 1 = 4. Score = 14 - 4 = 10 (Note: Sample explanation says 15 - 4 = 11, implying weights 5, 7, 6).",
+      "constraints": "1 ≤ N ≤ 2000\n1 ≤ Ai ≤ 10⁹\n1 ≤ Wi ≤ 10⁶",
+      "test_cases": [
+        {
+          "input": "5\n3 1 4 2 5\n5 2 7 3 6",
+          "output": "11"
+        }
+      ]
+    },
+    {
+      "problem_id": 12,
+      "title": "K Segment Maximum XOR Partition",
+      "difficulty": 0.8,
+      "primary_skill": "Dynamic Programming",
+      "skills": ["Bitmask/XOR", "Partition DP"],
+      "description": "You are given an array of N integers and an integer K. Partition array into exactly K contiguous segments. Define segment value as: (XOR sum of elements) × (length of segment). Maximize total value.\n\nInput Format:\nFirst line: N K.\nSecond line: N integers.\n\nOutput Format:\nMaximum value.\n\nConstraints:\n1 ≤ N ≤ 500\n1 ≤ K ≤ N\n0 ≤ Ai ≤ 10⁹",
+      "test_cases": [
+        {
+          "input": "5 2\n1 2 3 4 5",
+          "output": "22"
+        }
+      ]
+    },
+    {
+      "problem_id": 13,
+      "title": "String Compression with Removals",
+      "difficulty": 0.9,
+      "primary_skill": "Dynamic Programming",
+      "skills": ["String DP", "Optimization"],
+      "description": "You are given a string S and integer K. You may delete at most K characters. After deletions, compress string using rule: aaaa → a4, bbb → b3, c → c. Goal: minimize compressed length.\n\nInput Format:\nFirst line: S.\nSecond line: K.\n\nOutput Format:\nMinimum compressed length.\n\nExplanation:\nDelete 'b' and 'd' from 'aaabcccd' to get 'aaaccc'. Compressed 'a3c3' has length 4.",
+      "constraints": "1 ≤ |S| ≤ 100\n0 ≤ K ≤ |S|",
+      "test_cases": [
+        {
+          "input": "aaabcccd\n2",
+          "output": "4"
+        }
+      ]
+    },
+    {
+      "problem_id": 14,
+      "title": "Grid Path with Energy Recharge",
+      "difficulty": 0.8,
+      "primary_skill": "Dynamic Programming",
+      "skills": ["Grid DP", "State Space DP"],
+      "description": "You are given an N×M grid. Each cell contains: positive number (energy gained), negative number (energy lost), or '#' (blocked). You start at (0,0) with energy E. Rules: Move right or down. Energy must never drop below 1. If energy > LIMIT, it resets to LIMIT. Find number of valid paths to (N−1,M−1) modulo 10⁹+7.\n\nInput Format:\nFirst line: N M E LIMIT.\nFollowing N lines: grid values.\n\nOutput Format:\nNumber of valid paths.\n\nConstraints:\n1 ≤ N,M ≤ 200\n−100 ≤ cell ≤ 100\n1 ≤ E ≤ 100\n1 ≤ LIMIT ≤ 200",
+      "test_cases": [
+        {
+          "input": "2 2 3 5\n1 -2\n3 2",
+          "output": "2"
+        }
+      ]
+    },
+    {
+      "problem_id": 15,
+      "title": "Palindromic Subsequence With Cost Budget",
+      "difficulty": 0.8,
+      "primary_skill": "Dynamic Programming",
+      "skills": ["Palindromic DP", "Knapsack DP"],
+      "description": "You are given: string S, integer array cost[26], and integer budget B. You may pick any palindromic subsequence. Each chosen character costs its letter cost. Goal: maximize palindrome length without exceeding budget.\n\nInput Format:\nFirst line: S.\nSecond line: 26 integers representing costs of 'a' through 'z'.\nThird line: budget B.\n\nOutput Format:\nMaximum length.\n\nConstraints:\n1 ≤ |S| ≤ 200\n1 ≤ cost[i] ≤ 100\n1 ≤ B ≤ 10⁴",
+      "test_cases": [
+        {
+          "input": "abcbda\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26\n7",
+          "output": "5"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "problem_id": 1,
+      "title": "Count Connected Villages",
+      "difficulty": 0.3,
+      "primary_skill": "DFS / BFS",
+      "skills": ["Graph Traversal", "Connected Components"],
+      "description": "You are given an undirected graph representing villages connected by roads. Each village belongs to exactly one connected region. Find how many connected regions exist.\n\nInput Format:\nThe first line contains N (number of villages) and M (number of roads).\nThe next M lines contain pairs of integers u and v representing a road between village u and v.\n\nOutput Format:\nA single integer representing the number of connected components.\n\nExplanation:\nFor N=5, M=2 with roads (1,2) and (4,5), the components are {1,2}, {3}, and {4,5}. Total = 3.",
+      "constraints": "1 ≤ N ≤ 10⁵\n0 ≤ M ≤ 10⁵\n1 ≤ u,v ≤ N",
+      "test_cases": [
+        {
+          "input": "5 2\n1 2\n4 5",
+          "output": "3"
+        }
+      ]
+    },
+    {
+      "problem_id": 2,
+      "title": "Shortest Path in Binary Maze",
+      "difficulty": 0.4,
+      "primary_skill": "BFS",
+      "skills": ["Shortest Path", "Grid Traversal"],
+      "description": "You are given an N × M grid where 0 represents a blocked cell and 1 represents a free cell. You start at (0,0) and want to reach (N-1, M-1). You can move up, down, left, or right. Find the minimum number of steps required, or -1 if unreachable.\n\nInput Format:\nThe first line contains N and M.\nThe next N lines contain a string of length M consisting of 0s and 1s.\n\nOutput Format:\nSingle integer representing the minimum steps.\n\nExplanation:\n(0,0) → (0,1) → (0,2) → (1,2) → (2,2) is the shortest path of length 4.",
+      "constraints": "1 ≤ N,M ≤ 500",
+      "test_cases": [
+        {
+          "input": "3 3\n111\n010\n111",
+          "output": "4"
+        }
+      ]
+    },
+    {
+      "problem_id": 3,
+      "title": "DFS Subtree Size",
+      "difficulty": 0.4,
+      "primary_skill": "DFS",
+      "skills": ["Recursion", "Tree Traversal"],
+      "description": "You are given a tree with N nodes rooted at node 1. For every node, calculate and print the size of its subtree. The subtree size of a node includes itself and all its descendants.\n\nInput Format:\nThe first line contains N.\nThe next N-1 lines contain edges (u, v).\n\nOutput Format:\nN integers representing the subtree sizes for nodes 1 to N.",
+      "constraints": "1 ≤ N ≤ 2×10⁵",
+      "test_cases": [
+        {
+          "input": "5\n1 2\n1 3\n3 4\n3 5",
+          "output": "5 1 3 1 1"
+        }
+      ]
+    },
+    {
+      "problem_id": 4,
+      "title": "Flood Fill Regions",
+      "difficulty": 0.4,
+      "primary_skill": "Flood Fill",
+      "skills": ["DFS", "Grid Components"],
+      "description": "You are given a grid of lowercase letters. Cells belong to the same region if they have the same character and are connected 4-directionally. Find the total number of distinct regions in the grid.\n\nInput Format:\nThe first line contains N and M.\nThe next N lines contain strings of length M representing the grid.\n\nOutput Format:\nA single integer representing the count of distinct regions.",
+      "constraints": "1 ≤ N,M ≤ 300",
+      "test_cases": [
+        {
+          "input": "3 4\naabb\naacc\nddcc",
+          "output": "4"
+        }
+      ]
+    },
+    {
+      "problem_id": 5,
+      "title": "Nodes Reachable Within K Steps",
+      "difficulty": 0.4,
+      "primary_skill": "BFS",
+      "skills": ["Level-order Traversal", "Distance Tracking"],
+      "description": "You are given an undirected graph and a starting node S. Find how many nodes (excluding the start node itself) can be reached using at most K edges.\n\nInput Format:\nN M S K followed by M edges.\n\nOutput Format:\nSingle integer representing the count of reachable nodes.\n\nExplanation:\nNodes at distance 1 are {2, 5}. Nodes at distance 2 are {3, 6}. Total = 4.",
+      "constraints": "1 ≤ N ≤ 10⁵\n1 ≤ M ≤ 10⁵\n0 ≤ K ≤ N",
+      "test_cases": [
+        {
+          "input": "6 5 1 2\n1 2\n2 3\n3 4\n1 5\n5 6",
+          "output": "4"
+        }
+      ]
+    },
+    {
+      "problem_id": 6,
+      "title": "Restricted City Reachability",
+      "difficulty": 0.5,
+      "primary_skill": "DFS / BFS",
+      "skills": ["Conditional Traversal", "Graph Pruning"],
+      "description": "You are given N cities and M roads. Some cities are restricted and cannot be entered. Starting from city S, find the number of cities you can reach without ever passing through a restricted city.\n\nInput Format:\nN M\nM lines of edges\nR (number of restricted nodes)\nList of R restricted nodes\nS (starting node)\n\nOutput Format:\nNumber of reachable cities.",
+      "constraints": "1 ≤ N ≤ 2×10⁵\n0 ≤ M ≤ 2×10⁵\n1 ≤ R ≤ N",
+      "test_cases": [
+        {
+          "input": "6 6\n1 2\n2 3\n3 4\n4 5\n5 6\n1 6\n2\n3 5\n1",
+          "output": "3"
+        }
+      ]
+    },
+    {
+      "problem_id": 7,
+      "title": "Minimum Steps to Convert Number",
+      "difficulty": 0.5,
+      "primary_skill": "BFS",
+      "skills": ["State Space Search", "Shortest Path"],
+      "description": "Given integers 'start' and 'target', and an array of operations 'ops', find the minimum number of additions required to reach the target from the start. Each operation in 'ops' can be used any number of times. Valid states are between 0 and 10^5.\n\nInput Format:\nstart target\nN (size of ops)\nops array\n\nOutput Format:\nMinimum operations or -1 if impossible.",
+      "constraints": "0 ≤ start, target ≤ 10⁵\n1 ≤ N ≤ 100",
+      "test_cases": [
+        {
+          "input": "2 7\n2\n3 4",
+          "output": "2"
+        }
+      ]
+    },
+    {
+      "problem_id": 8,
+      "title": "Island Expansion Time",
+      "difficulty": 0.6,
+      "primary_skill": "Multi-Source BFS",
+      "skills": ["Level-order Traversal", "Grid Expansion"],
+      "description": "You are given a grid where 1 is land and 0 is water. Every minute, water adjacent to land becomes land. Find the total time required for the entire grid to become land. If it's impossible, print -1.\n\nInput Format:\nN M\nN lines of M integers (0 or 1).\n\nOutput Format:\nMinutes required.",
+      "constraints": "1 ≤ N,M ≤ 1000",
+      "test_cases": [
+        {
+          "input": "3 3\n1 0 0\n0 0 0\n0 0 1",
+          "output": "2"
+        }
+      ]
+    },
+    {
+      "problem_id": 9,
+      "title": "DFS Path Value Maximum",
+      "difficulty": 0.6,
+      "primary_skill": "DFS with Backtracking",
+      "skills": ["Pathfinding", "Weighted Nodes"],
+      "description": "Given a directed graph where each node has a value, find the maximum possible sum of values on a path. You may start at any node, but you cannot revisit any node in a single path.\n\nInput Format:\nN M\nV1...VN (node values)\nM lines of edges\n\nOutput Format:\nMaximum score.",
+      "constraints": "1 ≤ N ≤ 2000\n0 ≤ M ≤ 5000\n−10⁴ ≤ V[i] ≤ 10⁴",
+      "test_cases": [
+        {
+          "input": "4 4\n1 2 3 4\n1 2\n2 3\n1 4\n4 3",
+          "output": "8"
+        }
+      ]
+    },
+    {
+      "problem_id": 10,
+      "title": "Closest Special Node",
+      "difficulty": 0.5,
+      "primary_skill": "Multi-Source BFS",
+      "skills": ["Distance Calculation", "Graph Traversal"],
+      "description": "You are given an undirected graph with normal nodes and some 'special' nodes. For every node i from 1 to N, compute the shortest distance to any special node.\n\nInput Format:\nN M\nM lines of edges\nK (number of special nodes)\nList of special nodes\n\nOutput Format:\nN space-separated distances.",
+      "constraints": "1 ≤ N ≤ 2×10⁵\n1 ≤ M ≤ 2×10⁵",
+      "test_cases": [
+        {
+          "input": "5 4\n1 2\n2 3\n3 4\n4 5\n1\n5",
+          "output": "4 3 2 1 0"
+        }
+      ]
+    },
+    {
+      "problem_id": 11,
+      "title": "Time-Locked Graph Escape",
+      "difficulty": 0.7,
+      "primary_skill": "Modified BFS / Dijkstra",
+      "skills": ["Time Constraints", "Wait-time Optimization"],
+      "description": "Each node i becomes accessible only after time Ti. You start at node 1 at time 0. Moving along an edge takes 1 unit of time. You may wait at any node. Find the minimum time to reach node N.\n\nInput Format:\nN M\nT1...TN\nM lines of edges\n\nOutput Format:\nMinimum time or -1.",
+      "constraints": "1 ≤ N ≤ 2×10⁵\n0 ≤ Ti ≤ 10⁹",
+      "test_cases": [
+        {
+          "input": "4 4\n0 2 1 3\n1 2\n2 3\n3 4\n1 3",
+          "output": "4"
+        }
+      ]
+    },
+    {
+      "problem_id": 12,
+      "title": "Maximum XOR Path Without Revisit",
+      "difficulty": 0.8,
+      "primary_skill": "DFS + Bitmasking / Backtracking",
+      "skills": ["XOR Logic", "Hamiltonian Path Variant"],
+      "description": "Travel from node 1 to node N without revisiting nodes. Find the maximum possible XOR sum of all node values along the path.\n\nInput Format:\nN M\nvalues array\nM lines of edges\n\nOutput Format:\nMaximum XOR score.",
+      "constraints": "1 ≤ N ≤ 20\n0 ≤ values[i] ≤ 10⁹",
+      "test_cases": [
+        {
+          "input": "4 4\n1 2 3 4\n1 2\n2 4\n1 3\n3 4",
+          "output": "7"
+        }
+      ]
+    },
+    {
+      "problem_id": 13,
+      "title": "Multi-Color Spread Simulation",
+      "difficulty": 0.8,
+      "primary_skill": "Multi-Source BFS",
+      "skills": ["Priority Queues", "Grid Simulation"],
+      "description": "A grid contains multiple colored sources. Every minute, colors spread to neighbors. If multiple colors reach a cell at the same time, the color with the smallest index wins. Return the grid state after T minutes.\n\nInput Format:\nN M K T\nN lines of grid strings\n\nOutput Format:\nFinal grid after T minutes.",
+      "constraints": "1 ≤ N,M ≤ 1000\n1 ≤ T ≤ 10⁹",
+      "test_cases": [
+        {
+          "input": "3 3 2 2\n1..\n...\n..2",
+          "output": "111\n112\n122"
+        }
+      ]
+    },
+    {
+      "problem_id": 14,
+      "title": "Directed Graph Safe Nodes",
+      "difficulty": 0.7,
+      "primary_skill": "Graph Cycle Detection",
+      "skills": ["Topological Sort", "Out-degree Tracking"],
+      "description": "A node is safe if all paths starting from it eventually end at a terminal node. Terminal nodes have no outgoing edges. Cycles are unsafe. Return all safe nodes in ascending order.\n\nInput Format:\nN M followed by M edges.\n\nOutput Format:\nSpace-separated list of safe nodes.",
+      "constraints": "1 ≤ N ≤ 10⁵\n0 ≤ M ≤ 2×10⁵",
+      "test_cases": [
+        {
+          "input": "5 5\n1 2\n2 3\n3 4\n4 2\n3 5",
+          "output": "5"
+        }
+      ]
+    },
+    {
+      "problem_id": 15,
+      "title": "Shortest Path With Edge Reversal Limit",
+      "difficulty": 0.8,
+      "primary_skill": "0-1 BFS / 0-K BFS",
+      "skills": ["Layered Graph", "Shortest Path"],
+      "description": "Given a directed graph, find the shortest path from 1 to N. You are allowed to reverse at most K existing edges during your traversal.\n\nInput Format:\nN M K followed by M edges.\n\nOutput Format:\nMinimum distance or -1.",
+      "constraints": "1 ≤ N ≤ 10⁵\n0 ≤ K ≤ 20",
+      "test_cases": [
+        {
+          "input": "4 3 1\n1 2\n3 2\n3 4",
+          "output": "3"
+        }
+      ]
+    }
+  ]
+]

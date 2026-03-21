@@ -3,6 +3,7 @@ from flask import Flask, jsonify
 from db import Database
 from routes.student_routes import student_bp
 from routes.learning_route import learning_bp
+from routes.submission_routes import submission_bp
 from utils.skill_loader import SkillLoader
 
 app = Flask(__name__)
@@ -24,6 +25,7 @@ def get_skills():
 
 app.register_blueprint(student_bp)
 app.register_blueprint(learning_bp)
+app.register_blueprint(submission_bp)
 
 @app.errorhandler(404)
 def not_found(error):
